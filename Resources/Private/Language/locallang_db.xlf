@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-04-10T10:25:41Z" product-name="championshipmanager">
+		<header/>
+		<body>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament">
+				<source>Tournament</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.gender">
+				<source>Gender</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.begin">
+				<source>Begin</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.end">
+				<source>End</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.sportshall">
+				<source>Sportshall</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.team">
+				<source>Team</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.matchplan">
+				<source>Matchplan</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_sportshall">
+				<source>Sportshall</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_sportshall.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_sportshall.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_sportshall.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_sportshall.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_sportshall.telefon">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_sportshall.link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_sportshall.bild">
+				<source>Bild</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_team">
+				<source>Team</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_team.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_team.ansprechpartner">
+				<source>Ansprechpartner</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_team.telefon">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_team.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_team.picture">
+				<source>Picture</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_team.url">
+				<source>Url</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_matchplan">
+				<source>Matchplan</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_matchplan.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_matchplan.round">
+				<source>Round</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournround">
+				<source>Tournround</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournround.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournround.groupround">
+				<source>Groupround</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournround.koround">
+				<source>Koround</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupround">
+				<source>Groupround</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_koround">
+				<source>Koround</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match">
+				<source>Match</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.homepointsset1">
+				<source>Homepointsset1</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.homepointsset2">
+				<source>Homepointsset2</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.homepointsset3">
+				<source>Homepointsset3</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.homepointsset4">
+				<source>Homepointsset4</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.homepointsset5">
+				<source>Homepointsset5</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.hometeam">
+				<source>Hometeam</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestteam">
+				<source>Guestteam</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

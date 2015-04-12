@@ -1,0 +1,15 @@
+
+plugin.tx_championshipmanager {
+	view {
+		# cat=plugin.tx_championshipmanager/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:championshipmanager/Resources/Private/Templates/
+		# cat=plugin.tx_championshipmanager/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:championshipmanager/Resources/Private/Partials/
+		# cat=plugin.tx_championshipmanager/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:championshipmanager/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_championshipmanager//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-04-10T10:25:41Z" product-name="championshipmanager">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="gender.description">
+				<source>gender</source>
+			</trans-unit>
+			<trans-unit id="begin.description">
+				<source>begin</source>
+			</trans-unit>
+			<trans-unit id="end.description">
+				<source>end</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="sportshall.description">
+				<source>Halle</source>
+			</trans-unit>
+			<trans-unit id="team.description">
+				<source>team</source>
+			</trans-unit>
+			<trans-unit id="matchplan.description">
+				<source>matchplan</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

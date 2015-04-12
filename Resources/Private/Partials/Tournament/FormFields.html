@@ -1,0 +1,21 @@
+
+<label for="name">
+	<f:translate key="tx_championshipmanager_domain_model_tournament.name" />
+</label><br />
+	<f:form.textfield property="name" /><br />
+<label for="gender">
+	<f:translate key="tx_championshipmanager_domain_model_tournament.gender" />
+</label><br />
+	<f:form.textfield property="gender" /><br />
+<label for="begin">
+	<f:translate key="tx_championshipmanager_domain_model_tournament.begin" />
+</label><br />
+	<f:form.textfield property="begin"  value="{tournament.begin->f:format.date()}" /><br />
+<label for="end">
+	<f:translate key="tx_championshipmanager_domain_model_tournament.end" />
+</label><br />
+	<f:form.textfield property="end"  value="{tournament.end->f:format.date()}" /><br />
+<label for="type">
+	<f:translate key="tx_championshipmanager_domain_model_tournament.type" />
+</label><br />
+	<f:form.textfield property="type" /><br />
