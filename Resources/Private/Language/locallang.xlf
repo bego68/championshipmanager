@@ -12,6 +12,12 @@
 			<trans-unit id="tx_championshipmanager_domain_model_tournament.gender">
 				<source>Gender</source>
 			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.gender1">
+				<source>weiblich</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.gender2">
+				<source>männlich</source>
+			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_tournament.begin">
 				<source>Begin</source>
 			</trans-unit>
