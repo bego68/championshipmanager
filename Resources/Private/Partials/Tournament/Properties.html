@@ -2,3 +2,15 @@
 <p>{tournament.begin -> f:format.date()}- {tournament.end -> f:format.date()}</p>
 
 <p>Hier kommen noch Mannschaftsliste und Spielplan</p>
+
+<f:render section="teamlist" arguments="{teams:tournament.team}" />
+
+
+<f:section name="teamlist">
+	<section class="teamlist">
+		<h3>Teilnehmende Mannschaften</h3>
+		<f:for each="{teams}" as="team">
+			<div class="team"> {team.name} </div>
+		</f:for>
+	</section>
+</f:section>
