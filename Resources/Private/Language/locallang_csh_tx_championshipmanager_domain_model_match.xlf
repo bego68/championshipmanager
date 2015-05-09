@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2015-04-10T10:25:41Z" product-name="championshipmanager">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T07:54:28Z" product-name="championshipmanager">
 		<header/>
 		<body>
 			<trans-unit id="homepointsset1.description">
@@ -17,6 +17,33 @@
 			</trans-unit>
 			<trans-unit id="homepointsset5.description">
 				<source>homepointsset5</source>
+			</trans-unit>
+			<trans-unit id="guestpointsset1.description">
+				<source>guestpointsset1</source>
+			</trans-unit>
+			<trans-unit id="guestpointsset2.description">
+				<source>guestpointsset2</source>
+			</trans-unit>
+			<trans-unit id="guestpointsset3.description">
+				<source>guestpointsset3</source>
+			</trans-unit>
+			<trans-unit id="guestpointsset4.description">
+				<source>guestpointsset4</source>
+			</trans-unit>
+			<trans-unit id="guestpointsset5.description">
+				<source>guestpointsset5</source>
+			</trans-unit>
+			<trans-unit id="matchname.description">
+				<source>matchname</source>
+			</trans-unit>
+			<trans-unit id="matchnameshort.description">
+				<source>matchnameshort</source>
+			</trans-unit>
+			<trans-unit id="properties.description">
+				<source>properties</source>
+			</trans-unit>
+			<trans-unit id="number.description">
+				<source>number</source>
 			</trans-unit>
 			<trans-unit id="hometeam.description">
 				<source>heim</source>

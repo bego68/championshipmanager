@@ -104,7 +104,7 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "team",
+                            "relationName": "teams",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "uid": "349390915725"
@@ -240,8 +240,8 @@
         {
             "config": {
                 "position": [
-                    29,
-                    813
+                    45,
+                    712
                 ]
             },
             "name": "New Model Object",
@@ -344,8 +344,8 @@
         {
             "config": {
                 "position": [
-                    27,
-                    186
+                    62,
+                    266
                 ]
             },
             "name": "New Model Object",
@@ -395,7 +395,7 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "round",
+                            "relationName": "rounds",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "uid": "1168852570890"
@@ -407,14 +407,14 @@
         {
             "config": {
                 "position": [
-                    277,
-                    499
+                    329,
+                    357
                 ]
             },
             "name": "New Model Object",
             "value": {
                 "actionGroup": {
-                    "_default0_list": false,
+                    "_default0_list": true,
                     "_default1_show": false,
                     "_default2_new_create": false,
                     "_default3_edit_update": false,
@@ -448,6 +448,36 @@
                             "propertyName": "name",
                             "propertyType": "String",
                             "uid": "809651564904"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "ko",
+                            "propertyType": "Boolean",
+                            "uid": "432834066873"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "shortname",
+                            "propertyType": "String",
+                            "uid": "694960599007"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "position",
+                            "propertyType": "Integer",
+                            "uid": "502068396589"
                         }
                     ]
                 },
@@ -458,20 +488,10 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "Gruppe",
-                            "relationName": "groupround",
+                            "relationName": "groups",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "uid": "1165784575575"
-                        },
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "koround",
-                            "relationType": "zeroToOne",
-                            "relationWire": "[wired]",
-                            "uid": "629970585170"
                         }
                     ]
                 }
@@ -480,8 +500,8 @@
         {
             "config": {
                 "position": [
-                    -14,
-                    613
+                    623,
+                    301
                 ]
             },
             "name": "New Model Object",
@@ -496,7 +516,7 @@
 
                     ]
                 },
-                "name": "Groupround",
+                "name": "Group",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -517,7 +537,26 @@
                 },
                 "relationGroup": {
                     "relations": [
-
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "matches",
+                            "relationType": "zeroToMany",
+                            "relationWire": "[wired]",
+                            "uid": "313648384034"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "groupteams",
+                            "relationType": "zeroToOne",
+                            "relationWire": "",
+                            "uid": "1226952811689"
+                        }
                     ]
                 }
             }
@@ -525,53 +564,8 @@
         {
             "config": {
                 "position": [
-                    507,
-                    824
-                ]
-            },
-            "name": "New Model Object",
-            "value": {
-                "actionGroup": {
-                    "_default0_list": false,
-                    "_default1_show": false,
-                    "_default2_new_create": false,
-                    "_default3_edit_update": false,
-                    "_default4_delete": false,
-                    "customActions": [
-
-                    ]
-                },
-                "name": "Koround",
-                "objectsettings": {
-                    "addDeletedField": true,
-                    "addHiddenField": true,
-                    "addStarttimeEndtimeFields": true,
-                    "aggregateRoot": false,
-                    "categorizable": false,
-                    "description": "",
-                    "mapToTable": "",
-                    "parentClass": "",
-                    "sorting": false,
-                    "type": "Entity",
-                    "uid": "750328293421"
-                },
-                "propertyGroup": {
-                    "properties": [
-
-                    ]
-                },
-                "relationGroup": {
-                    "relations": [
-
-                    ]
-                }
-            }
-        },
-        {
-            "config": {
-                "position": [
-                    288,
-                    751
+                    651,
+                    510
                 ]
             },
             "name": "New Model Object",
@@ -651,6 +645,96 @@
                             "propertyName": "homepointsset5",
                             "propertyType": "Integer",
                             "uid": "177526697272"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "guestpointsset1",
+                            "propertyType": "Integer",
+                            "uid": "929048480417"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "guestpointsset2",
+                            "propertyType": "Integer",
+                            "uid": "707612729554"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "guestpointsset3",
+                            "propertyType": "Integer",
+                            "uid": "1089483956939"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "guestpointsset4",
+                            "propertyType": "Integer",
+                            "uid": "961179439966"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "guestpointsset5",
+                            "propertyType": "Integer",
+                            "uid": "234130679504"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "matchname",
+                            "propertyType": "String",
+                            "uid": "1006176321822"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "matchnameshort",
+                            "propertyType": "String",
+                            "uid": "18864590787"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "properties",
+                            "propertyType": "Text",
+                            "uid": "885173159028"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "number",
+                            "propertyType": "Integer",
+                            "uid": "793177682338"
                         }
                     ]
                 },
@@ -662,7 +746,7 @@
                             "propertyIsExcludeField": true,
                             "relationDescription": "heim",
                             "relationName": "hometeam",
-                            "relationType": "zeroToOne",
+                            "relationType": "manyToOne",
                             "relationWire": "[wired]",
                             "uid": "462603803412"
                         },
@@ -672,9 +756,142 @@
                             "propertyIsExcludeField": true,
                             "relationDescription": "gast",
                             "relationName": "guestteam",
-                            "relationType": "zeroToOne",
+                            "relationType": "manyToOne",
                             "relationWire": "[wired]",
                             "uid": "1388030100200"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    353,
+                    537
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Groupteams",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "64529878150"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "number",
+                            "propertyType": "Integer",
+                            "uid": "156097373104"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "groupfromranking",
+                            "propertyType": "Integer",
+                            "uid": "1078940370203"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "ranking",
+                            "propertyType": "Integer",
+                            "uid": "14509438871"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "points",
+                            "propertyType": "Integer",
+                            "uid": "1238440422797"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "sets",
+                            "propertyType": "Integer",
+                            "uid": "149386184779"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "balls",
+                            "propertyType": "Integer",
+                            "uid": "44780565958"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "properties",
+                            "propertyType": "Integer",
+                            "uid": "23542261621"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "Team",
+                            "relationName": "team",
+                            "relationType": "zeroToOne",
+                            "relationWire": "[wired]",
+                            "uid": "1012574657737"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "groupfrom",
+                            "relationType": "zeroToOne",
+                            "relationWire": "[wired]",
+                            "uid": "979732501230"
                         }
                     ]
                 }
@@ -694,12 +911,12 @@
             "disableVersioning": false,
             "sourceLanguage": "de",
             "state": "alpha",
-            "targetVersion": "6.2",
+            "targetVersion": "6.2.0-6.2.99",
             "version": "0.1.0"
         },
         "extensionKey": "championshipmanager",
         "name": "Championship Manager",
-        "originalExtensionKey": "",
+        "originalExtensionKey": "championshipmanager",
         "persons": [
             {
                 "company": "Volleyballserver",
@@ -787,6 +1004,18 @@
         },
         {
             "src": {
+                "moduleId": 5,
+                "terminal": "relationWire_0",
+                "uid": "313648384034"
+            },
+            "tgt": {
+                "moduleId": 6,
+                "terminal": "SOURCES",
+                "uid": "636754814252"
+            }
+        },
+        {
+            "src": {
                 "moduleId": 4,
                 "terminal": "relationWire_0",
                 "uid": "1165784575575"
@@ -799,21 +1028,33 @@
         },
         {
             "src": {
-                "moduleId": 4,
-                "terminal": "relationWire_1",
-                "uid": "629970585170"
+                "moduleId": 6,
+                "terminal": "relationWire_0",
+                "uid": "462603803412"
             },
             "tgt": {
-                "moduleId": 6,
+                "moduleId": 7,
                 "terminal": "SOURCES",
-                "uid": "750328293421"
+                "uid": "64529878150"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 6,
+                "terminal": "relationWire_1",
+                "uid": "1388030100200"
+            },
+            "tgt": {
+                "moduleId": 7,
+                "terminal": "SOURCES",
+                "uid": "64529878150"
             }
         },
         {
             "src": {
                 "moduleId": 7,
                 "terminal": "relationWire_0",
-                "uid": "462603803412"
+                "uid": "1012574657737"
             },
             "tgt": {
                 "moduleId": 2,
@@ -825,17 +1066,17 @@
             "src": {
                 "moduleId": 7,
                 "terminal": "relationWire_1",
-                "uid": "1388030100200"
+                "uid": "979732501230"
             },
             "tgt": {
-                "moduleId": 2,
+                "moduleId": 5,
                 "terminal": "SOURCES",
-                "uid": "646184974099"
+                "uid": "1218957149387"
             }
         }
     ],
     "log": {
-        "last_modified": "2015-04-10 10:25",
+        "last_modified": "2015-05-09 07:54",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }

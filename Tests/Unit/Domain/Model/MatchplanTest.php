@@ -76,26 +76,26 @@ class MatchplanTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getRoundReturnsInitialValueForTournround() {
+	public function getRoundsReturnsInitialValueForTournround() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->subject->getRound()
+			$this->subject->getRounds()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setRoundForObjectStorageContainingTournroundSetsRound() {
+	public function setRoundsForObjectStorageContainingTournroundSetsRounds() {
 		$round = new \Volleyballserver\Championshipmanager\Domain\Model\Tournround();
-		$objectStorageHoldingExactlyOneRound = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$objectStorageHoldingExactlyOneRound->attach($round);
-		$this->subject->setRound($objectStorageHoldingExactlyOneRound);
+		$objectStorageHoldingExactlyOneRounds = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneRounds->attach($round);
+		$this->subject->setRounds($objectStorageHoldingExactlyOneRounds);
 
 		$this->assertAttributeEquals(
-			$objectStorageHoldingExactlyOneRound,
-			'round',
+			$objectStorageHoldingExactlyOneRounds,
+			'rounds',
 			$this->subject
 		);
 	}
@@ -103,11 +103,11 @@ class MatchplanTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function addRoundToObjectStorageHoldingRound() {
+	public function addRoundToObjectStorageHoldingRounds() {
 		$round = new \Volleyballserver\Championshipmanager\Domain\Model\Tournround();
-		$roundObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
-		$roundObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($round));
-		$this->inject($this->subject, 'round', $roundObjectStorageMock);
+		$roundsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$roundsObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($round));
+		$this->inject($this->subject, 'rounds', $roundsObjectStorageMock);
 
 		$this->subject->addRound($round);
 	}
@@ -115,11 +115,11 @@ class MatchplanTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function removeRoundFromObjectStorageHoldingRound() {
+	public function removeRoundFromObjectStorageHoldingRounds() {
 		$round = new \Volleyballserver\Championshipmanager\Domain\Model\Tournround();
-		$roundObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
-		$roundObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($round));
-		$this->inject($this->subject, 'round', $roundObjectStorageMock);
+		$roundsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$roundsObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($round));
+		$this->inject($this->subject, 'rounds', $roundsObjectStorageMock);
 
 		$this->subject->removeRound($round);
 

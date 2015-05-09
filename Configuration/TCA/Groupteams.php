@@ -3,13 +3,13 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
-	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament']['ctrl'],
+$GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, gender, begin, end, type, sportshall, teams, matchplan',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, groupfromranking, ranking, points, sets, balls, properties, team, groupfrom',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, gender, begin, end, type, sportshall, teams, matchplan, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, number, groupfromranking, ranking, points, sets, balls, properties, team, groupfrom, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -38,8 +38,8 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_championshipmanager_domain_model_tournament',
-				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_tournament.pid=###CURRENT_PID### AND tx_championshipmanager_domain_model_tournament.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_championshipmanager_domain_model_groupteams',
+				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_groupteams.pid=###CURRENT_PID### AND tx_championshipmanager_domain_model_groupteams.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -97,87 +97,77 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 			),
 		),
 
-		'name' => array(
+		'number' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.name',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.number',
 			'config' => array(
 				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
+				'size' => 4,
+				'eval' => 'int'
+			)
 		),
-		'gender' => array(
+		'groupfromranking' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.gender',
-			'config' => array(
-				'type' => 'select',
-				'items' => array(
-					array('-- Label --', 0),
-				),
-				'size' => 1,
-				'maxitems' => 1,
-				'eval' => ''
-			),
-		),
-		'begin' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.begin',
-			'config' => array(
-				'dbType' => 'datetime',
-				'type' => 'input',
-				'size' => 12,
-				'eval' => 'datetime',
-				'checkbox' => 0,
-				'default' => '0000-00-00 00:00:00'
-			),
-		),
-		'end' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.end',
-			'config' => array(
-				'dbType' => 'datetime',
-				'type' => 'input',
-				'size' => 12,
-				'eval' => 'datetime',
-				'checkbox' => 0,
-				'default' => '0000-00-00 00:00:00'
-			),
-		),
-		'type' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.type',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.groupfromranking',
 			'config' => array(
 				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
+				'size' => 4,
+				'eval' => 'int'
+			)
 		),
-		'sportshall' => array(
+		'ranking' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.sportshall',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.ranking',
 			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_championshipmanager_domain_model_sportshall',
-				'foreign_field' => 'tournament',
-				'maxitems'      => 9999,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
-			),
-
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
 		),
-		'teams' => array(
+		'points' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.teams',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.points',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
+		'sets' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.sets',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
+		'balls' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.balls',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
+		'properties' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.properties',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
+		'team' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.team',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_championshipmanager_domain_model_team',
-				'foreign_field' => 'tournament',
-				'maxitems'      => 9999,
+				'minitems' => 0,
+				'maxitems' => 1,
 				'appearance' => array(
 					'collapseAll' => 0,
 					'levelLinksPosition' => 'top',
@@ -186,14 +176,13 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 					'showAllLocalizationLink' => 1
 				),
 			),
-
 		),
-		'matchplan' => array(
+		'groupfrom' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.matchplan',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.groupfrom',
 			'config' => array(
 				'type' => 'inline',
-				'foreign_table' => 'tx_championshipmanager_domain_model_matchplan',
+				'foreign_table' => 'tx_championshipmanager_domain_model_group',
 				'minitems' => 0,
 				'maxitems' => 1,
 				'appearance' => array(

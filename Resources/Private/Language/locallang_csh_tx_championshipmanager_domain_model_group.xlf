@@ -3,11 +3,11 @@
 	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T07:54:28Z" product-name="championshipmanager">
 		<header/>
 		<body>
-			<trans-unit id="name.description">
-				<source>name</source>
+			<trans-unit id="matches.description">
+				<source>matches</source>
 			</trans-unit>
-			<trans-unit id="rounds.description">
-				<source>rounds</source>
+			<trans-unit id="groupteams.description">
+				<source>groupteams</source>
 			</trans-unit>
 		</body>
 	</file>

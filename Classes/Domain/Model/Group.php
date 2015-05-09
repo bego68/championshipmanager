@@ -29,24 +29,24 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
  ***************************************************************/
 
 /**
- * Matchplan
+ * Group
  */
-class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * name
+	 * matches
 	 *
-	 * @var string
-	 */
-	protected $name = '';
-
-	/**
-	 * rounds
-	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Tournround>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Match>
 	 * @cascade remove
 	 */
-	protected $rounds = NULL;
+	protected $matches = NULL;
+
+	/**
+	 * groupteams
+	 *
+	 * @var
+	 */
+	protected $groupteams = NULL;
 
 	/**
 	 * __construct
@@ -65,65 +65,65 @@ class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	protected function initStorageObjects() {
-		$this->rounds = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->matches = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
-	 * Returns the name
+	 * Adds a Match
 	 *
-	 * @return string $name
-	 */
-	public function getName() {
-		return $this->name;
-	}
-
-	/**
-	 * Sets the name
-	 *
-	 * @param string $name
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Match $match
 	 * @return void
 	 */
-	public function setName($name) {
-		$this->name = $name;
+	public function addMatch(\Volleyballserver\Championshipmanager\Domain\Model\Match $match) {
+		$this->matches->attach($match);
 	}
 
 	/**
-	 * Adds a Tournround
+	 * Removes a Match
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Tournround $round
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Match $matchToRemove The Match to be removed
 	 * @return void
 	 */
-	public function addRound(\Volleyballserver\Championshipmanager\Domain\Model\Tournround $round) {
-		$this->rounds->attach($round);
+	public function removeMatch(\Volleyballserver\Championshipmanager\Domain\Model\Match $matchToRemove) {
+		$this->matches->detach($matchToRemove);
 	}
 
 	/**
-	 * Removes a Tournround
+	 * Returns the matches
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Tournround $roundToRemove The Tournround to be removed
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Match> $matches
+	 */
+	public function getMatches() {
+		return $this->matches;
+	}
+
+	/**
+	 * Sets the matches
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Match> $matches
 	 * @return void
 	 */
-	public function removeRound(\Volleyballserver\Championshipmanager\Domain\Model\Tournround $roundToRemove) {
-		$this->rounds->detach($roundToRemove);
+	public function setMatches(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $matches) {
+		$this->matches = $matches;
 	}
 
 	/**
-	 * Returns the rounds
+	 * Returns the groupteams
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Tournround> $rounds
+	 * @return  $groupteams
 	 */
-	public function getRounds() {
-		return $this->rounds;
+	public function getGroupteams() {
+		return $this->groupteams;
 	}
 
 	/**
-	 * Sets the rounds
+	 * Sets the groupteams
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Tournround> $rounds
+	 * @param string $groupteams
 	 * @return void
 	 */
-	public function setRounds(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $rounds) {
-		$this->rounds = $rounds;
+	public function setGroupteams($groupteams) {
+		$this->groupteams = $groupteams;
 	}
 
 }
