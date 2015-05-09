@@ -15,7 +15,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
+
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -56,7 +56,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 				'max' => 255,
 			)
 		),
-	
+
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -112,7 +112,9 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('-- Label --', 0),
+					array('-- bitte wählen --', 0),
+					array('weiblich', 1),
+					array('männlich', 2),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -205,6 +207,6 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 				),
 			),
 		),
-		
+
 	),
 );
