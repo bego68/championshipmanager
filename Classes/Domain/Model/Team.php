@@ -34,14 +34,14 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
 class Team extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * name
+	 * Name
 	 *
 	 * @var string
 	 */
 	protected $name = '';
 
 	/**
-	 * ansprechpartner
+	 * Ansprechpartner
 	 *
 	 * @var string
 	 */

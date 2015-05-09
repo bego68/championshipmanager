@@ -238,7 +238,7 @@ class GroupteamsTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getGroupfromReturnsInitialValueForGroup() {
+	public function getGroupfromReturnsInitialValueForTxGroup() {
 		$this->assertEquals(
 			NULL,
 			$this->subject->getGroupfrom()
@@ -248,8 +248,8 @@ class GroupteamsTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setGroupfromForGroupSetsGroupfrom() {
-		$groupfromFixture = new \Volleyballserver\Championshipmanager\Domain\Model\Group();
+	public function setGroupfromForTxGroupSetsGroupfrom() {
+		$groupfromFixture = new \Volleyballserver\Championshipmanager\Domain\Model\TxGroup();
 		$this->subject->setGroupfrom($groupfromFixture);
 
 		$this->assertAttributeEquals(

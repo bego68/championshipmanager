@@ -1,49 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T12:02:19Z" product-name="championshipmanager">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T14:03:31Z" product-name="championshipmanager">
 		<header/>
 		<body>
 			<trans-unit id="homepointsset1.description">
-				<source>homepointsset1</source>
+				<source>Heim Punkte 1. Satz</source>
 			</trans-unit>
 			<trans-unit id="homepointsset2.description">
-				<source>homepointsset2</source>
+				<source>Heim Punkte 2. Satz</source>
 			</trans-unit>
 			<trans-unit id="homepointsset3.description">
-				<source>homepointsset3</source>
+				<source>Heim Punkte 3. Satz</source>
 			</trans-unit>
 			<trans-unit id="homepointsset4.description">
-				<source>homepointsset4</source>
+				<source>Heim Punkte 4. Satz</source>
 			</trans-unit>
 			<trans-unit id="homepointsset5.description">
-				<source>homepointsset5</source>
+				<source>Heim Punkte 5. Satz</source>
 			</trans-unit>
 			<trans-unit id="guestpointsset1.description">
-				<source>guestpointsset1</source>
+				<source>Gast Punkte 1. Satz</source>
 			</trans-unit>
 			<trans-unit id="guestpointsset2.description">
-				<source>guestpointsset2</source>
+				<source>Gast Punkte 2. Satz</source>
 			</trans-unit>
 			<trans-unit id="guestpointsset3.description">
-				<source>guestpointsset3</source>
+				<source>Gast Punkte 3. Satz</source>
 			</trans-unit>
 			<trans-unit id="guestpointsset4.description">
-				<source>guestpointsset4</source>
+				<source>Gast Punkte 4. Satz</source>
 			</trans-unit>
 			<trans-unit id="guestpointsset5.description">
-				<source>guestpointsset5</source>
+				<source>Gast Punkte 5. Satz</source>
 			</trans-unit>
 			<trans-unit id="matchname.description">
-				<source>matchname</source>
+				<source>Name des Spiels</source>
 			</trans-unit>
 			<trans-unit id="matchnameshort.description">
-				<source>matchnameshort</source>
+				<source>Kurzname</source>
 			</trans-unit>
 			<trans-unit id="properties.description">
 				<source>properties</source>
 			</trans-unit>
 			<trans-unit id="number.description">
-				<source>number</source>
+				<source>Spielnummer</source>
+			</trans-unit>
+			<trans-unit id="court.description">
+				<source>Feld</source>
+			</trans-unit>
+			<trans-unit id="spieltdatum.description">
+				<source>Datum</source>
+			</trans-unit>
+			<trans-unit id="matchtime.description">
+				<source>Uhrzeit</source>
 			</trans-unit>
 			<trans-unit id="hometeam.description">
 				<source>heim</source>

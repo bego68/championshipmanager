@@ -6,16 +6,16 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_championshipmanager_domain_model_match'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_match']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, homepointsset1, homepointsset2, homepointsset3, homepointsset4, homepointsset5, guestpointsset1, guestpointsset2, guestpointsset3, guestpointsset4, guestpointsset5, matchname, matchnameshort, properties, number, hometeam, guestteam',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, homepointsset1, homepointsset2, homepointsset3, homepointsset4, homepointsset5, guestpointsset1, guestpointsset2, guestpointsset3, guestpointsset4, guestpointsset5, matchname, matchnameshort, properties, number, court, spieltdatum, matchtime, hometeam, guestteam',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, homepointsset1, homepointsset2, homepointsset3, homepointsset4, homepointsset5, guestpointsset1, guestpointsset2, guestpointsset3, guestpointsset4, guestpointsset5, matchname, matchnameshort, properties, number, hometeam, guestteam, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, homepointsset1, homepointsset2, homepointsset3, homepointsset4, homepointsset5, guestpointsset1, guestpointsset2, guestpointsset3, guestpointsset4, guestpointsset5, matchname, matchnameshort, properties, number, court, spieltdatum, matchtime, hometeam, guestteam, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
+
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -56,7 +56,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_match'] = array(
 				'max' => 255,
 			)
 		),
-	
+
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -224,12 +224,48 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_match'] = array(
 				'eval' => 'int'
 			)
 		),
+		'court' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.court',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'spieltdatum' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.spieltdatum',
+			'config' => array(
+				'dbType' => 'date',
+				'type' => 'input',
+				'size' => 7,
+				'eval' => 'date',
+				'checkbox' => 0,
+				'default' => '0000-00-00'
+			),
+		),
+		'matchtime' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.matchtime',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'time',
+				'checkbox' => 1,
+				'default' => time()
+			)
+		),
 		'hometeam' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.hometeam',
 			'config' => array(
 				'type' => 'select',
+				'items' => array(
+						array('-- Bitte wählen --', 0),
+				),
 				'foreign_table' => 'tx_championshipmanager_domain_model_groupteams',
+				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_groupteams.pid = ###CURRENT_PID###',
 				'minitems' => 0,
 				'maxitems' => 1,
 			),
@@ -239,13 +275,17 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_match'] = array(
 			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.guestteam',
 			'config' => array(
 				'type' => 'select',
+				'items' => array(
+						array('-- Bitte wählen --', 0),
+				),
 				'foreign_table' => 'tx_championshipmanager_domain_model_groupteams',
+				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_groupteams.pid = ###CURRENT_PID###',
 				'minitems' => 0,
 				'maxitems' => 1,
 			),
 		),
-		
-		'tx_group' => array(
+
+		'txgroup' => array(
 			'config' => array(
 				'type' => 'passthrough',
 			),

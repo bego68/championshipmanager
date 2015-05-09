@@ -223,9 +223,9 @@ CREATE TABLE tx_championshipmanager_domain_model_tournround (
 );
 
 #
-# Table structure for table 'tx_championshipmanager_domain_model_group'
+# Table structure for table 'tx_championshipmanager_domain_model_txgroup'
 #
-CREATE TABLE tx_championshipmanager_domain_model_group (
+CREATE TABLE tx_championshipmanager_domain_model_txgroup (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
@@ -275,7 +275,7 @@ CREATE TABLE tx_championshipmanager_domain_model_match (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	tx_group int(11) unsigned DEFAULT '0' NOT NULL,
+	txgroup int(11) unsigned DEFAULT '0' NOT NULL,
 
 	homepointsset1 int(11) DEFAULT '0' NOT NULL,
 	homepointsset2 int(11) DEFAULT '0' NOT NULL,
@@ -291,6 +291,9 @@ CREATE TABLE tx_championshipmanager_domain_model_match (
 	matchnameshort varchar(255) DEFAULT '' NOT NULL,
 	properties text NOT NULL,
 	number int(11) DEFAULT '0' NOT NULL,
+	court varchar(255) DEFAULT '' NOT NULL,
+	spieltdatum date DEFAULT '0000-00-00',
+	matchtime int(11) DEFAULT '0' NOT NULL,
 	hometeam int(11) unsigned DEFAULT '0',
 	guestteam int(11) unsigned DEFAULT '0',
 
@@ -331,7 +334,7 @@ CREATE TABLE tx_championshipmanager_domain_model_groupteams (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	tx_group int(11) unsigned DEFAULT '0' NOT NULL,
+	txgroup int(11) unsigned DEFAULT '0' NOT NULL,
 
 	number int(11) DEFAULT '0' NOT NULL,
 	groupfromranking int(11) DEFAULT '0' NOT NULL,
@@ -400,9 +403,9 @@ CREATE TABLE tx_championshipmanager_domain_model_tournround (
 );
 
 #
-# Table structure for table 'tx_championshipmanager_domain_model_group'
+# Table structure for table 'tx_championshipmanager_domain_model_txgroup'
 #
-CREATE TABLE tx_championshipmanager_domain_model_group (
+CREATE TABLE tx_championshipmanager_domain_model_txgroup (
 
 	tournround  int(11) unsigned DEFAULT '0' NOT NULL,
 
@@ -413,7 +416,7 @@ CREATE TABLE tx_championshipmanager_domain_model_group (
 #
 CREATE TABLE tx_championshipmanager_domain_model_match (
 
-	tx_group  int(11) unsigned DEFAULT '0' NOT NULL,
+	txgroup  int(11) unsigned DEFAULT '0' NOT NULL,
 
 );
 
@@ -422,6 +425,6 @@ CREATE TABLE tx_championshipmanager_domain_model_match (
 #
 CREATE TABLE tx_championshipmanager_domain_model_groupteams (
 
-	tx_group  int(11) unsigned DEFAULT '0' NOT NULL,
+	txgroup  int(11) unsigned DEFAULT '0' NOT NULL,
 
 );

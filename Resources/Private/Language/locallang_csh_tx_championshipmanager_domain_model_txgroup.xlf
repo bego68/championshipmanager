@@ -6,20 +6,17 @@
 			<trans-unit id="name.description">
 				<source>Name</source>
 			</trans-unit>
-			<trans-unit id="ansprechpartner.description">
-				<source>Ansprechpartner</source>
+			<trans-unit id="shortname.description">
+				<source>Kurzname</source>
 			</trans-unit>
-			<trans-unit id="telefon.description">
-				<source>telefon</source>
+			<trans-unit id="properties.description">
+				<source>Zusatzinfos</source>
 			</trans-unit>
-			<trans-unit id="email.description">
-				<source>email</source>
+			<trans-unit id="matches.description">
+				<source>Spiele</source>
 			</trans-unit>
-			<trans-unit id="picture.description">
-				<source>picture</source>
-			</trans-unit>
-			<trans-unit id="url.description">
-				<source>url</source>
+			<trans-unit id="groupteams.description">
+				<source>MAnnschaften</source>
 			</trans-unit>
 		</body>
 	</file>

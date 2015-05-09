@@ -64,7 +64,7 @@ class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Gruppen
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Group>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\TxGroup>
 	 * @cascade remove
 	 */
 	protected $groups = NULL;
@@ -175,29 +175,29 @@ class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Adds a Group
+	 * Adds a TxGroup
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Group $group
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\TxGroup $group
 	 * @return void
 	 */
-	public function addGroup(\Volleyballserver\Championshipmanager\Domain\Model\Group $group) {
+	public function addGroup(\Volleyballserver\Championshipmanager\Domain\Model\TxGroup $group) {
 		$this->groups->attach($group);
 	}
 
 	/**
-	 * Removes a Group
+	 * Removes a TxGroup
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Group $groupToRemove The Group to be removed
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\TxGroup $groupToRemove The TxGroup to be removed
 	 * @return void
 	 */
-	public function removeGroup(\Volleyballserver\Championshipmanager\Domain\Model\Group $groupToRemove) {
+	public function removeGroup(\Volleyballserver\Championshipmanager\Domain\Model\TxGroup $groupToRemove) {
 		$this->groups->detach($groupToRemove);
 	}
 
 	/**
 	 * Returns the groups
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Group> $groups
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\TxGroup> $groups
 	 */
 	public function getGroups() {
 		return $this->groups;
@@ -206,7 +206,7 @@ class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the groups
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Group> $groups
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\TxGroup> $groups
 	 * @return void
 	 */
 	public function setGroups(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $groups) {

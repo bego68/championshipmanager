@@ -145,7 +145,7 @@ class TournroundTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getGroupsReturnsInitialValueForGroup() {
+	public function getGroupsReturnsInitialValueForTxGroup() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
@@ -156,8 +156,8 @@ class TournroundTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setGroupsForObjectStorageContainingGroupSetsGroups() {
-		$group = new \Volleyballserver\Championshipmanager\Domain\Model\Group();
+	public function setGroupsForObjectStorageContainingTxGroupSetsGroups() {
+		$group = new \Volleyballserver\Championshipmanager\Domain\Model\TxGroup();
 		$objectStorageHoldingExactlyOneGroups = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneGroups->attach($group);
 		$this->subject->setGroups($objectStorageHoldingExactlyOneGroups);
@@ -173,7 +173,7 @@ class TournroundTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function addGroupToObjectStorageHoldingGroups() {
-		$group = new \Volleyballserver\Championshipmanager\Domain\Model\Group();
+		$group = new \Volleyballserver\Championshipmanager\Domain\Model\TxGroup();
 		$groupsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$groupsObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($group));
 		$this->inject($this->subject, 'groups', $groupsObjectStorageMock);
@@ -185,7 +185,7 @@ class TournroundTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function removeGroupFromObjectStorageHoldingGroups() {
-		$group = new \Volleyballserver\Championshipmanager\Domain\Model\Group();
+		$group = new \Volleyballserver\Championshipmanager\Domain\Model\TxGroup();
 		$groupsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$groupsObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($group));
 		$this->inject($this->subject, 'groups', $groupsObjectStorageMock);

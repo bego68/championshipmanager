@@ -375,6 +375,76 @@ class MatchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
+	public function getCourtReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getCourt()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setCourtForStringSetsCourt() {
+		$this->subject->setCourt('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'court',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getSpieltdatumReturnsInitialValueForDateTime() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getSpieltdatum()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setSpieltdatumForDateTimeSetsSpieltdatum() {
+		$dateTimeFixture = new \DateTime();
+		$this->subject->setSpieltdatum($dateTimeFixture);
+
+		$this->assertAttributeEquals(
+			$dateTimeFixture,
+			'spieltdatum',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getMatchtimeReturnsInitialValueForInteger() {
+		$this->assertSame(
+			0,
+			$this->subject->getMatchtime()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setMatchtimeForIntegerSetsMatchtime() {
+		$this->subject->setMatchtime(12);
+
+		$this->assertAttributeEquals(
+			12,
+			'matchtime',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getHometeamReturnsInitialValueForGroupteams() {
 		$this->assertEquals(
 			NULL,

@@ -3,8 +3,8 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
-	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_group']['ctrl'],
+$GLOBALS['TCA']['tx_championshipmanager_domain_model_txgroup'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_txgroup']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, shortname, properties, matches, groupteams',
 	),
@@ -38,8 +38,8 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_championshipmanager_domain_model_group',
-				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_group.pid=###CURRENT_PID### AND tx_championshipmanager_domain_model_group.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_championshipmanager_domain_model_txgroup',
+				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_txgroup.pid=###CURRENT_PID### AND tx_championshipmanager_domain_model_txgroup.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -99,7 +99,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 
 		'name' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.name',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_txgroup.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -108,7 +108,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 		),
 		'shortname' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.shortname',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_txgroup.shortname',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -117,7 +117,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 		),
 		'properties' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.properties',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_txgroup.properties',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 40,
@@ -127,11 +127,11 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 		),
 		'matches' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.matches',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_txgroup.matches',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_championshipmanager_domain_model_match',
-				'foreign_field' => 'tx_group',
+				'foreign_field' => 'txgroup',
 				'maxitems'      => 9999,
 				'appearance' => array(
 					'collapseAll' => 0,
@@ -145,14 +145,14 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 		),
 		'groupteams' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.groupteams',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_txgroup.groupteams',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_championshipmanager_domain_model_groupteams',
-				'foreign_field' => 'tx_group',
+				'foreign_field' => 'txgroup',
 				'maxitems'      => 9999,
 				'appearance' => array(
-					'collapseAll' => 0,
+					'collapseAll' => 1,
 					'levelLinksPosition' => 'top',
 					'showSynchronizationLink' => 1,
 					'showPossibleLocalizationRecords' => 1,

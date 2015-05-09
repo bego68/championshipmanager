@@ -275,7 +275,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Name",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "name",
@@ -285,7 +285,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Ansprechpartner",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "ansprechpartner",
@@ -516,7 +516,7 @@
 
                     ]
                 },
-                "name": "Group",
+                "name": "TxGroup",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -570,7 +570,7 @@
                             "foreignRelationClass": "",
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
+                            "relationDescription": "Spiele",
                             "relationName": "matches",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
@@ -580,7 +580,7 @@
                             "foreignRelationClass": "",
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
+                            "relationDescription": "MAnnschaften",
                             "relationName": "groupteams",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
@@ -628,7 +628,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Heim Punkte 1. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "homepointsset1",
@@ -638,7 +638,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Heim Punkte 2. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "homepointsset2",
@@ -648,7 +648,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Heim Punkte 3. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "homepointsset3",
@@ -658,7 +658,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Heim Punkte 4. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "homepointsset4",
@@ -668,7 +668,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Heim Punkte 5. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "homepointsset5",
@@ -678,7 +678,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Gast Punkte 1. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "guestpointsset1",
@@ -688,7 +688,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Gast Punkte 2. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "guestpointsset2",
@@ -698,7 +698,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Gast Punkte 3. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "guestpointsset3",
@@ -708,7 +708,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Gast Punkte 4. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "guestpointsset4",
@@ -718,7 +718,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Gast Punkte 5. Satz",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "guestpointsset5",
@@ -728,7 +728,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Name des Spiels",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "matchname",
@@ -738,7 +738,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Kurzname",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "matchnameshort",
@@ -758,12 +758,42 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Spielnummer",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "number",
                             "propertyType": "Integer",
                             "uid": "793177682338"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Feld",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "court",
+                            "propertyType": "String",
+                            "uid": "1406754867756"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Datum",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "spieltdatum",
+                            "propertyType": "NativeDate",
+                            "uid": "415359099603"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Uhrzeit",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "matchtime",
+                            "propertyType": "Time",
+                            "uid": "1396981829387"
                         }
                     ]
                 },
@@ -831,7 +861,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Nummer",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "number",
@@ -841,7 +871,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Platzierung in Herkinftsgruppe",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "groupfromranking",
@@ -851,7 +881,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Platzierung",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "ranking",
@@ -861,7 +891,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Punkte",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "points",
@@ -871,7 +901,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "S\u00e4tze",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "sets",
@@ -881,7 +911,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "B\u00e4lle",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "balls",
@@ -891,7 +921,7 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "",
+                            "propertyDescription": "Eigenschaften",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "properties",
@@ -1117,7 +1147,7 @@
         }
     ],
     "log": {
-        "last_modified": "2015-05-09 12:02",
+        "last_modified": "2015-05-09 02:03",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }

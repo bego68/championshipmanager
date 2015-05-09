@@ -34,49 +34,49 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
 class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * number
+	 * Nummer
 	 *
 	 * @var integer
 	 */
 	protected $number = 0;
 
 	/**
-	 * groupfromranking
+	 * Platzierung in Herkinftsgruppe
 	 *
 	 * @var integer
 	 */
 	protected $groupfromranking = 0;
 
 	/**
-	 * ranking
+	 * Platzierung
 	 *
 	 * @var integer
 	 */
 	protected $ranking = 0;
 
 	/**
-	 * points
+	 * Punkte
 	 *
 	 * @var integer
 	 */
 	protected $points = 0;
 
 	/**
-	 * sets
+	 * Sätze
 	 *
 	 * @var integer
 	 */
 	protected $sets = 0;
 
 	/**
-	 * balls
+	 * Bälle
 	 *
 	 * @var integer
 	 */
 	protected $balls = 0;
 
 	/**
-	 * properties
+	 * Eigenschaften
 	 *
 	 * @var integer
 	 */
@@ -92,7 +92,7 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * kommt aus Gruppe
 	 *
-	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Group
+	 * @var \Volleyballserver\Championshipmanager\Domain\Model\TxGroup
 	 */
 	protected $groupfrom = NULL;
 
@@ -251,7 +251,7 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the groupfrom
 	 *
-	 * @return \Volleyballserver\Championshipmanager\Domain\Model\Group $groupfrom
+	 * @return \Volleyballserver\Championshipmanager\Domain\Model\TxGroup $groupfrom
 	 */
 	public function getGroupfrom() {
 		return $this->groupfrom;
@@ -260,10 +260,10 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the groupfrom
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Group $groupfrom
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\TxGroup $groupfrom
 	 * @return void
 	 */
-	public function setGroupfrom(\Volleyballserver\Championshipmanager\Domain\Model\Group $groupfrom) {
+	public function setGroupfrom(\Volleyballserver\Championshipmanager\Domain\Model\TxGroup $groupfrom) {
 		$this->groupfrom = $groupfrom;
 	}
 

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T12:02:19Z" product-name="championshipmanager">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T14:03:31Z" product-name="championshipmanager">
 		<header/>
 		<body>
 			<trans-unit id="number.description">
-				<source>number</source>
+				<source>Nummer</source>
 			</trans-unit>
 			<trans-unit id="groupfromranking.description">
-				<source>groupfromranking</source>
+				<source>Platzierung in Herkinftsgruppe</source>
 			</trans-unit>
 			<trans-unit id="ranking.description">
-				<source>ranking</source>
+				<source>Platzierung</source>
 			</trans-unit>
 			<trans-unit id="points.description">
-				<source>points</source>
+				<source>Punkte</source>
 			</trans-unit>
 			<trans-unit id="sets.description">
-				<source>sets</source>
+				<source>Sätze</source>
 			</trans-unit>
 			<trans-unit id="balls.description">
-				<source>balls</source>
+				<source>Bälle</source>
 			</trans-unit>
 			<trans-unit id="properties.description">
-				<source>properties</source>
+				<source>Eigenschaften</source>
 			</trans-unit>
 			<trans-unit id="team.description">
 				<source>Team</source>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T12:02:19Z" product-name="championshipmanager">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T14:03:31Z" product-name="championshipmanager">
 		<header/>
 		<body>
 			<trans-unit id="tx_championshipmanager_domain_model_tournament">
@@ -102,22 +102,22 @@
 			<trans-unit id="tx_championshipmanager_domain_model_tournround.groups">
 				<source>Groups</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_group">
-				<source>Group</source>
+			<trans-unit id="tx_championshipmanager_domain_model_txgroup">
+				<source>Tx Group</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_group.name">
+			<trans-unit id="tx_championshipmanager_domain_model_txgroup.name">
 				<source>Name</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_group.shortname">
+			<trans-unit id="tx_championshipmanager_domain_model_txgroup.shortname">
 				<source>Shortname</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_group.properties">
+			<trans-unit id="tx_championshipmanager_domain_model_txgroup.properties">
 				<source>Properties</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_group.matches">
+			<trans-unit id="tx_championshipmanager_domain_model_txgroup.matches">
 				<source>Matches</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_group.groupteams">
+			<trans-unit id="tx_championshipmanager_domain_model_txgroup.groupteams">
 				<source>Groupteams</source>
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_match">
@@ -164,6 +164,15 @@
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_match.number">
 				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.court">
+				<source>Court</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.spieltdatum">
+				<source>Spieltdatum</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.matchtime">
+				<source>Matchtime</source>
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_match.hometeam">
 				<source>Hometeam</source>

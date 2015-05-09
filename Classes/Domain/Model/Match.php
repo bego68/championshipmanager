@@ -34,84 +34,84 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
 class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * homepointsset1
+	 * Heim Punkte 1. Satz
 	 *
 	 * @var integer
 	 */
 	protected $homepointsset1 = 0;
 
 	/**
-	 * homepointsset2
+	 * Heim Punkte 2. Satz
 	 *
 	 * @var integer
 	 */
 	protected $homepointsset2 = 0;
 
 	/**
-	 * homepointsset3
+	 * Heim Punkte 3. Satz
 	 *
 	 * @var integer
 	 */
 	protected $homepointsset3 = 0;
 
 	/**
-	 * homepointsset4
+	 * Heim Punkte 4. Satz
 	 *
 	 * @var integer
 	 */
 	protected $homepointsset4 = 0;
 
 	/**
-	 * homepointsset5
+	 * Heim Punkte 5. Satz
 	 *
 	 * @var integer
 	 */
 	protected $homepointsset5 = 0;
 
 	/**
-	 * guestpointsset1
+	 * Gast Punkte 1. Satz
 	 *
 	 * @var integer
 	 */
 	protected $guestpointsset1 = 0;
 
 	/**
-	 * guestpointsset2
+	 * Gast Punkte 2. Satz
 	 *
 	 * @var integer
 	 */
 	protected $guestpointsset2 = 0;
 
 	/**
-	 * guestpointsset3
+	 * Gast Punkte 3. Satz
 	 *
 	 * @var integer
 	 */
 	protected $guestpointsset3 = 0;
 
 	/**
-	 * guestpointsset4
+	 * Gast Punkte 4. Satz
 	 *
 	 * @var integer
 	 */
 	protected $guestpointsset4 = 0;
 
 	/**
-	 * guestpointsset5
+	 * Gast Punkte 5. Satz
 	 *
 	 * @var integer
 	 */
 	protected $guestpointsset5 = 0;
 
 	/**
-	 * matchname
+	 * Name des Spiels
 	 *
 	 * @var string
 	 */
 	protected $matchname = '';
 
 	/**
-	 * matchnameshort
+	 * Kurzname
 	 *
 	 * @var string
 	 */
@@ -125,11 +125,32 @@ class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $properties = '';
 
 	/**
-	 * number
+	 * Spielnummer
 	 *
 	 * @var integer
 	 */
 	protected $number = 0;
+
+	/**
+	 * Feld
+	 *
+	 * @var string
+	 */
+	protected $court = '';
+
+	/**
+	 * Datum
+	 *
+	 * @var \DateTime
+	 */
+	protected $spieltdatum = NULL;
+
+	/**
+	 * Uhrzeit
+	 *
+	 * @var integer
+	 */
+	protected $matchtime = 0;
 
 	/**
 	 * heim
@@ -409,6 +430,63 @@ class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setNumber($number) {
 		$this->number = $number;
+	}
+
+	/**
+	 * Returns the court
+	 *
+	 * @return string $court
+	 */
+	public function getCourt() {
+		return $this->court;
+	}
+
+	/**
+	 * Sets the court
+	 *
+	 * @param string $court
+	 * @return void
+	 */
+	public function setCourt($court) {
+		$this->court = $court;
+	}
+
+	/**
+	 * Returns the spieltdatum
+	 *
+	 * @return \DateTime $spieltdatum
+	 */
+	public function getSpieltdatum() {
+		return $this->spieltdatum;
+	}
+
+	/**
+	 * Sets the spieltdatum
+	 *
+	 * @param \DateTime $spieltdatum
+	 * @return void
+	 */
+	public function setSpieltdatum(\DateTime $spieltdatum) {
+		$this->spieltdatum = $spieltdatum;
+	}
+
+	/**
+	 * Returns the matchtime
+	 *
+	 * @return integer $matchtime
+	 */
+	public function getMatchtime() {
+		return $this->matchtime;
+	}
+
+	/**
+	 * Sets the matchtime
+	 *
+	 * @param integer $matchtime
+	 * @return void
+	 */
+	public function setMatchtime(integer $matchtime) {
+		$this->matchtime = $matchtime;
 	}
 
 	/**
