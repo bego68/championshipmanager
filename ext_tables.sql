@@ -232,6 +232,9 @@ CREATE TABLE tx_championshipmanager_domain_model_group (
 
 	tournround int(11) unsigned DEFAULT '0' NOT NULL,
 
+	name varchar(255) DEFAULT '' NOT NULL,
+	shortname varchar(255) DEFAULT '' NOT NULL,
+	properties text NOT NULL,
 	matches int(11) unsigned DEFAULT '0' NOT NULL,
 	groupteams int(11) unsigned DEFAULT '0',
 

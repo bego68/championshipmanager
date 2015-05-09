@@ -29,7 +29,7 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
  ***************************************************************/
 
 /**
- * Matchplan
+ * Spielplam
  */
 class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
@@ -41,7 +41,7 @@ class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $name = '';
 
 	/**
-	 * rounds
+	 * Runden
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Tournround>
 	 * @cascade remove

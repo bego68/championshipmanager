@@ -167,7 +167,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround'] = array(
 $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group',
-		'label' => 'matches',
+		'label' => 'name',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -185,7 +185,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'matches,groupteams,',
+		'searchFields' => 'name,shortname,properties,matches,groupteams,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Group.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_championshipmanager_domain_model_group.gif'
 	),

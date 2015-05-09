@@ -29,7 +29,7 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
  ***************************************************************/
 
 /**
- * Groupteams
+ * Mannschaften einer Grppe
  */
 class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
@@ -90,7 +90,7 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $team = NULL;
 
 	/**
-	 * groupfrom
+	 * kommt aus Gruppe
 	 *
 	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Group
 	 */

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T08:23:23Z" product-name="championshipmanager">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T08:47:27Z" product-name="championshipmanager">
 		<header/>
 		<body>
 			<trans-unit id="tx_championshipmanager_domain_model_tournament">
@@ -104,6 +104,15 @@
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_group">
 				<source>Group</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_group.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_group.shortname">
+				<source>Shortname</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_group.properties">
+				<source>Properties</source>
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_group.matches">
 				<source>Matches</source>

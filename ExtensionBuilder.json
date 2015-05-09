@@ -103,7 +103,7 @@
                             "foreignRelationClass": "",
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
+                            "relationDescription": "Teams",
                             "relationName": "teams",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
@@ -113,7 +113,7 @@
                             "foreignRelationClass": "",
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
+                            "relationDescription": "Spiel\u00fclan",
                             "relationName": "matchplan",
                             "relationType": "zeroToOne",
                             "relationWire": "[wired]",
@@ -367,7 +367,7 @@
                     "addStarttimeEndtimeFields": true,
                     "aggregateRoot": false,
                     "categorizable": false,
-                    "description": "",
+                    "description": "Spielplam",
                     "mapToTable": "",
                     "parentClass": "",
                     "sorting": false,
@@ -394,7 +394,7 @@
                             "foreignRelationClass": "",
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
+                            "relationDescription": "Runden",
                             "relationName": "rounds",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
@@ -430,7 +430,7 @@
                     "addStarttimeEndtimeFields": true,
                     "aggregateRoot": false,
                     "categorizable": false,
-                    "description": "",
+                    "description": "Runde",
                     "mapToTable": "",
                     "parentClass": "",
                     "sorting": false,
@@ -487,7 +487,7 @@
                             "foreignRelationClass": "",
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
-                            "relationDescription": "Gruppe",
+                            "relationDescription": "Gruppen",
                             "relationName": "groups",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
@@ -523,7 +523,7 @@
                     "addStarttimeEndtimeFields": true,
                     "aggregateRoot": false,
                     "categorizable": false,
-                    "description": "",
+                    "description": "Gruppe",
                     "mapToTable": "",
                     "parentClass": "",
                     "sorting": false,
@@ -532,7 +532,36 @@
                 },
                 "propertyGroup": {
                     "properties": [
-
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Name",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "name",
+                            "propertyType": "String",
+                            "uid": "915966486170"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Kurzname",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "shortname",
+                            "propertyType": "String",
+                            "uid": "893995247114"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Zusatzinfos",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "properties",
+                            "propertyType": "Text",
+                            "uid": "1250150795705"
+                        }
                     ]
                 },
                 "relationGroup": {
@@ -564,8 +593,8 @@
         {
             "config": {
                 "position": [
-                    651,
-                    510
+                    662,
+                    600
                 ]
             },
             "name": "New Model Object",
@@ -790,7 +819,7 @@
                     "addStarttimeEndtimeFields": true,
                     "aggregateRoot": false,
                     "categorizable": false,
-                    "description": "",
+                    "description": "Mannschaften einer Grppe",
                     "mapToTable": "",
                     "parentClass": "",
                     "sorting": false,
@@ -887,7 +916,7 @@
                             "foreignRelationClass": "",
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
+                            "relationDescription": "kommt aus Gruppe",
                             "relationName": "groupfrom",
                             "relationType": "zeroToOne",
                             "relationWire": "[wired]",
@@ -1088,7 +1117,7 @@
         }
     ],
     "log": {
-        "last_modified": "2015-05-09 08:23",
+        "last_modified": "2015-05-09 08:47",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }

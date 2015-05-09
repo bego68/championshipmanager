@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T08:23:23Z" product-name="championshipmanager">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T08:47:27Z" product-name="championshipmanager">
 		<header/>
 		<body>
 			<trans-unit id="name.description">
@@ -22,10 +22,10 @@
 				<source>Halle</source>
 			</trans-unit>
 			<trans-unit id="teams.description">
-				<source>teams</source>
+				<source>Teams</source>
 			</trans-unit>
 			<trans-unit id="matchplan.description">
-				<source>matchplan</source>
+				<source>Spielülan</source>
 			</trans-unit>
 		</body>
 	</file>

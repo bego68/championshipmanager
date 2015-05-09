@@ -53,6 +53,75 @@ class GroupTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
+	public function getNameReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getName()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setNameForStringSetsName() {
+		$this->subject->setName('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'name',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getShortnameReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getShortname()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setShortnameForStringSetsShortname() {
+		$this->subject->setShortname('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'shortname',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getPropertiesReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getProperties()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setPropertiesForStringSetsProperties() {
+		$this->subject->setProperties('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'properties',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getMatchesReturnsInitialValueForMatch() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(

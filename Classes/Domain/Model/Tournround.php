@@ -29,7 +29,7 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
  ***************************************************************/
 
 /**
- * Tournround
+ * Runde
  */
 class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
@@ -62,7 +62,7 @@ class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $position = 0;
 
 	/**
-	 * Gruppe
+	 * Gruppen
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Group>
 	 * @cascade remove

@@ -77,7 +77,7 @@ class Tournament extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $sportshall = NULL;
 
 	/**
-	 * teams
+	 * Teams
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Team>
 	 * @cascade remove
@@ -85,7 +85,7 @@ class Tournament extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $teams = NULL;
 
 	/**
-	 * matchplan
+	 * Spielülan
 	 *
 	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Matchplan
 	 */

@@ -29,9 +29,32 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
  ***************************************************************/
 
 /**
- * Group
+ * Gruppe
  */
 class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+
+	/**
+	 * Name
+	 *
+	 * @var string
+	 * @validate NotEmpty
+	 */
+	protected $name = '';
+
+	/**
+	 * Kurzname
+	 *
+	 * @var string
+	 * @validate NotEmpty
+	 */
+	protected $shortname = '';
+
+	/**
+	 * Zusatzinfos
+	 *
+	 * @var string
+	 */
+	protected $properties = '';
 
 	/**
 	 * matches
@@ -66,6 +89,63 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected function initStorageObjects() {
 		$this->matches = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+	}
+
+	/**
+	 * Returns the name
+	 *
+	 * @return string $name
+	 */
+	public function getName() {
+		return $this->name;
+	}
+
+	/**
+	 * Sets the name
+	 *
+	 * @param string $name
+	 * @return void
+	 */
+	public function setName($name) {
+		$this->name = $name;
+	}
+
+	/**
+	 * Returns the shortname
+	 *
+	 * @return string $shortname
+	 */
+	public function getShortname() {
+		return $this->shortname;
+	}
+
+	/**
+	 * Sets the shortname
+	 *
+	 * @param string $shortname
+	 * @return void
+	 */
+	public function setShortname($shortname) {
+		$this->shortname = $shortname;
+	}
+
+	/**
+	 * Returns the properties
+	 *
+	 * @return string $properties
+	 */
+	public function getProperties() {
+		return $this->properties;
+	}
+
+	/**
+	 * Sets the properties
+	 *
+	 * @param string $properties
+	 * @return void
+	 */
+	public function setProperties($properties) {
+		$this->properties = $properties;
 	}
 
 	/**
