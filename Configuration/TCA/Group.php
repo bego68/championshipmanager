@@ -15,7 +15,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
+
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -56,7 +56,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 				'max' => 255,
 			)
 		),
-	
+
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -161,7 +161,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 			),
 
 		),
-		
+
 		'tournround' => array(
 			'config' => array(
 				'type' => 'passthrough',
