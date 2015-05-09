@@ -67,7 +67,8 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * groupteams
 	 *
-	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Groupteams
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Groupteams>
+	 * @cascade remove
 	 */
 	protected $groupteams = NULL;
 
@@ -89,6 +90,7 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected function initStorageObjects() {
 		$this->matches = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->groupteams = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -188,9 +190,29 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
+	 * Adds a Groupteams
+	 *
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteam
+	 * @return void
+	 */
+	public function addGroupteam(\Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteam) {
+		$this->groupteams->attach($groupteam);
+	}
+
+	/**
+	 * Removes a Groupteams
+	 *
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteamToRemove The Groupteams to be removed
+	 * @return void
+	 */
+	public function removeGroupteam(\Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteamToRemove) {
+		$this->groupteams->detach($groupteamToRemove);
+	}
+
+	/**
 	 * Returns the groupteams
 	 *
-	 * @return \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteams
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Groupteams> $groupteams
 	 */
 	public function getGroupteams() {
 		return $this->groupteams;
@@ -199,10 +221,10 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the groupteams
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteams
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Groupteams> $groupteams
 	 * @return void
 	 */
-	public function setGroupteams(\Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteams) {
+	public function setGroupteams(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $groupteams) {
 		$this->groupteams = $groupteams;
 	}
 

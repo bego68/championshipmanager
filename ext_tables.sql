@@ -236,7 +236,7 @@ CREATE TABLE tx_championshipmanager_domain_model_group (
 	shortname varchar(255) DEFAULT '' NOT NULL,
 	properties text NOT NULL,
 	matches int(11) unsigned DEFAULT '0' NOT NULL,
-	groupteams int(11) unsigned DEFAULT '0',
+	groupteams int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -331,6 +331,8 @@ CREATE TABLE tx_championshipmanager_domain_model_groupteams (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
+	tx_group int(11) unsigned DEFAULT '0' NOT NULL,
+
 	number int(11) DEFAULT '0' NOT NULL,
 	groupfromranking int(11) DEFAULT '0' NOT NULL,
 	ranking int(11) DEFAULT '0' NOT NULL,
@@ -410,6 +412,15 @@ CREATE TABLE tx_championshipmanager_domain_model_group (
 # Table structure for table 'tx_championshipmanager_domain_model_match'
 #
 CREATE TABLE tx_championshipmanager_domain_model_match (
+
+	tx_group  int(11) unsigned DEFAULT '0' NOT NULL,
+
+);
+
+#
+# Table structure for table 'tx_championshipmanager_domain_model_groupteams'
+#
+CREATE TABLE tx_championshipmanager_domain_model_groupteams (
 
 	tx_group  int(11) unsigned DEFAULT '0' NOT NULL,
 
