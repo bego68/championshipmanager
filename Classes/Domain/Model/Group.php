@@ -44,7 +44,7 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * groupteams
 	 *
-	 * @var
+	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Groupteams
 	 */
 	protected $groupteams = NULL;
 
@@ -110,7 +110,7 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the groupteams
 	 *
-	 * @return  $groupteams
+	 * @return \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteams
 	 */
 	public function getGroupteams() {
 		return $this->groupteams;
@@ -119,10 +119,10 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the groupteams
 	 *
-	 * @param string $groupteams
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteams
 	 * @return void
 	 */
-	public function setGroupteams($groupteams) {
+	public function setGroupteams(\Volleyballserver\Championshipmanager\Domain\Model\Groupteams $groupteams) {
 		$this->groupteams = $groupteams;
 	}
 

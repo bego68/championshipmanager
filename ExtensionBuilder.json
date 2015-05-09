@@ -500,8 +500,8 @@
         {
             "config": {
                 "position": [
-                    623,
-                    301
+                    730,
+                    318
                 ]
             },
             "name": "New Model Object",
@@ -554,7 +554,7 @@
                             "relationDescription": "",
                             "relationName": "groupteams",
                             "relationType": "zeroToOne",
-                            "relationWire": "",
+                            "relationWire": "[wired]",
                             "uid": "1226952811689"
                         }
                     ]
@@ -767,8 +767,8 @@
         {
             "config": {
                 "position": [
-                    353,
-                    537
+                    326,
+                    636
                 ]
             },
             "name": "New Model Object",
@@ -1073,10 +1073,22 @@
                 "terminal": "SOURCES",
                 "uid": "1218957149387"
             }
+        },
+        {
+            "src": {
+                "moduleId": 5,
+                "terminal": "relationWire_1",
+                "uid": "1226952811689"
+            },
+            "tgt": {
+                "moduleId": 7,
+                "terminal": "SOURCES",
+                "uid": "64529878150"
+            }
         }
     ],
     "log": {
-        "last_modified": "2015-05-09 07:54",
+        "last_modified": "2015-05-09 08:23",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }

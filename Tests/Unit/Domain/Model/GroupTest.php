@@ -105,10 +105,24 @@ class GroupTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getGroupteamsReturnsInitialValueFor() {	}
+	public function getGroupteamsReturnsInitialValueForGroupteams() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getGroupteams()
+		);
+	}
 
 	/**
 	 * @test
 	 */
-	public function setGroupteamsForSetsGroupteams() {	}
+	public function setGroupteamsForGroupteamsSetsGroupteams() {
+		$groupteamsFixture = new \Volleyballserver\Championshipmanager\Domain\Model\Groupteams();
+		$this->subject->setGroupteams($groupteamsFixture);
+
+		$this->assertAttributeEquals(
+			$groupteamsFixture,
+			'groupteams',
+			$this->subject
+		);
+	}
 }
