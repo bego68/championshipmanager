@@ -166,6 +166,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_championshipmanager_domain_model_team',
+				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_team.pid = ###CURRENT_PID### ORDER BY NAME',
 				'minitems' => 0,
 				'maxitems' => 1,
 				'appearance' => array(
@@ -183,6 +184,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_championshipmanager_domain_model_group',
+				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_group.pid = ###CURRENT_PID### ORDER BY NAME',
 				'minitems' => 0,
 				'maxitems' => 1,
 				'appearance' => array(
