@@ -69,16 +69,79 @@ class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $homepointsset5 = 0;
 
 	/**
+	 * guestpointsset1
+	 *
+	 * @var integer
+	 */
+	protected $guestpointsset1 = 0;
+
+	/**
+	 * guestpointsset2
+	 *
+	 * @var integer
+	 */
+	protected $guestpointsset2 = 0;
+
+	/**
+	 * guestpointsset3
+	 *
+	 * @var integer
+	 */
+	protected $guestpointsset3 = 0;
+
+	/**
+	 * guestpointsset4
+	 *
+	 * @var integer
+	 */
+	protected $guestpointsset4 = 0;
+
+	/**
+	 * guestpointsset5
+	 *
+	 * @var integer
+	 */
+	protected $guestpointsset5 = 0;
+
+	/**
+	 * matchname
+	 *
+	 * @var string
+	 */
+	protected $matchname = '';
+
+	/**
+	 * matchnameshort
+	 *
+	 * @var string
+	 */
+	protected $matchnameshort = '';
+
+	/**
+	 * properties
+	 *
+	 * @var string
+	 */
+	protected $properties = '';
+
+	/**
+	 * number
+	 *
+	 * @var integer
+	 */
+	protected $number = 0;
+
+	/**
 	 * heim
 	 *
-	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Team
+	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Groupteams
 	 */
 	protected $hometeam = NULL;
 
 	/**
 	 * gast
 	 *
-	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Team
+	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Groupteams
 	 */
 	protected $guestteam = NULL;
 
@@ -178,9 +241,180 @@ class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
+	 * Returns the guestpointsset1
+	 *
+	 * @return integer $guestpointsset1
+	 */
+	public function getGuestpointsset1() {
+		return $this->guestpointsset1;
+	}
+
+	/**
+	 * Sets the guestpointsset1
+	 *
+	 * @param integer $guestpointsset1
+	 * @return void
+	 */
+	public function setGuestpointsset1($guestpointsset1) {
+		$this->guestpointsset1 = $guestpointsset1;
+	}
+
+	/**
+	 * Returns the guestpointsset2
+	 *
+	 * @return integer $guestpointsset2
+	 */
+	public function getGuestpointsset2() {
+		return $this->guestpointsset2;
+	}
+
+	/**
+	 * Sets the guestpointsset2
+	 *
+	 * @param integer $guestpointsset2
+	 * @return void
+	 */
+	public function setGuestpointsset2($guestpointsset2) {
+		$this->guestpointsset2 = $guestpointsset2;
+	}
+
+	/**
+	 * Returns the guestpointsset3
+	 *
+	 * @return integer $guestpointsset3
+	 */
+	public function getGuestpointsset3() {
+		return $this->guestpointsset3;
+	}
+
+	/**
+	 * Sets the guestpointsset3
+	 *
+	 * @param integer $guestpointsset3
+	 * @return void
+	 */
+	public function setGuestpointsset3($guestpointsset3) {
+		$this->guestpointsset3 = $guestpointsset3;
+	}
+
+	/**
+	 * Returns the guestpointsset4
+	 *
+	 * @return integer $guestpointsset4
+	 */
+	public function getGuestpointsset4() {
+		return $this->guestpointsset4;
+	}
+
+	/**
+	 * Sets the guestpointsset4
+	 *
+	 * @param integer $guestpointsset4
+	 * @return void
+	 */
+	public function setGuestpointsset4($guestpointsset4) {
+		$this->guestpointsset4 = $guestpointsset4;
+	}
+
+	/**
+	 * Returns the guestpointsset5
+	 *
+	 * @return integer $guestpointsset5
+	 */
+	public function getGuestpointsset5() {
+		return $this->guestpointsset5;
+	}
+
+	/**
+	 * Sets the guestpointsset5
+	 *
+	 * @param integer $guestpointsset5
+	 * @return void
+	 */
+	public function setGuestpointsset5($guestpointsset5) {
+		$this->guestpointsset5 = $guestpointsset5;
+	}
+
+	/**
+	 * Returns the matchname
+	 *
+	 * @return string $matchname
+	 */
+	public function getMatchname() {
+		return $this->matchname;
+	}
+
+	/**
+	 * Sets the matchname
+	 *
+	 * @param string $matchname
+	 * @return void
+	 */
+	public function setMatchname($matchname) {
+		$this->matchname = $matchname;
+	}
+
+	/**
+	 * Returns the matchnameshort
+	 *
+	 * @return string $matchnameshort
+	 */
+	public function getMatchnameshort() {
+		return $this->matchnameshort;
+	}
+
+	/**
+	 * Sets the matchnameshort
+	 *
+	 * @param string $matchnameshort
+	 * @return void
+	 */
+	public function setMatchnameshort($matchnameshort) {
+		$this->matchnameshort = $matchnameshort;
+	}
+
+	/**
+	 * Returns the properties
+	 *
+	 * @return string $properties
+	 */
+	public function getProperties() {
+		return $this->properties;
+	}
+
+	/**
+	 * Sets the properties
+	 *
+	 * @param string $properties
+	 * @return void
+	 */
+	public function setProperties($properties) {
+		$this->properties = $properties;
+	}
+
+	/**
+	 * Returns the number
+	 *
+	 * @return integer $number
+	 */
+	public function getNumber() {
+		return $this->number;
+	}
+
+	/**
+	 * Sets the number
+	 *
+	 * @param integer $number
+	 * @return void
+	 */
+	public function setNumber($number) {
+		$this->number = $number;
+	}
+
+	/**
 	 * Returns the hometeam
 	 *
-	 * @return \Volleyballserver\Championshipmanager\Domain\Model\Team $hometeam
+	 * @return \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $hometeam
 	 */
 	public function getHometeam() {
 		return $this->hometeam;
@@ -189,17 +423,17 @@ class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the hometeam
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Team $hometeam
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $hometeam
 	 * @return void
 	 */
-	public function setHometeam(\Volleyballserver\Championshipmanager\Domain\Model\Team $hometeam) {
+	public function setHometeam(\Volleyballserver\Championshipmanager\Domain\Model\Groupteams $hometeam) {
 		$this->hometeam = $hometeam;
 	}
 
 	/**
 	 * Returns the guestteam
 	 *
-	 * @return \Volleyballserver\Championshipmanager\Domain\Model\Team $guestteam
+	 * @return \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $guestteam
 	 */
 	public function getGuestteam() {
 		return $this->guestteam;
@@ -208,10 +442,10 @@ class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the guestteam
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Team $guestteam
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Groupteams $guestteam
 	 * @return void
 	 */
-	public function setGuestteam(\Volleyballserver\Championshipmanager\Domain\Model\Team $guestteam) {
+	public function setGuestteam(\Volleyballserver\Championshipmanager\Domain\Model\Groupteams $guestteam) {
 		$this->guestteam = $guestteam;
 	}
 

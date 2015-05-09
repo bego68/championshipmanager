@@ -77,15 +77,15 @@ class Tournament extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $sportshall = NULL;
 
 	/**
-	 * team
+	 * Teams
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Team>
 	 * @cascade remove
 	 */
-	protected $team = NULL;
+	protected $teams = NULL;
 
 	/**
-	 * matchplan
+	 * Spielülan
 	 *
 	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Matchplan
 	 */
@@ -109,7 +109,7 @@ class Tournament extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected function initStorageObjects() {
 		$this->sportshall = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$this->team = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->teams = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -253,7 +253,7 @@ class Tournament extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	public function addTeam(\Volleyballserver\Championshipmanager\Domain\Model\Team $team) {
-		$this->team->attach($team);
+		$this->teams->attach($team);
 	}
 
 	/**
@@ -263,26 +263,26 @@ class Tournament extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	public function removeTeam(\Volleyballserver\Championshipmanager\Domain\Model\Team $teamToRemove) {
-		$this->team->detach($teamToRemove);
+		$this->teams->detach($teamToRemove);
 	}
 
 	/**
-	 * Returns the team
+	 * Returns the teams
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Team> $team
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Team> $teams
 	 */
-	public function getTeam() {
-		return $this->team;
+	public function getTeams() {
+		return $this->teams;
 	}
 
 	/**
-	 * Sets the team
+	 * Sets the teams
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Team> $team
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Team> $teams
 	 * @return void
 	 */
-	public function setTeam(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $team) {
-		$this->team = $team;
+	public function setTeams(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $teams) {
+		$this->teams = $teams;
 	}
 
 	/**

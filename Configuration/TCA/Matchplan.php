@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_championshipmanager_domain_model_matchplan'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_matchplan']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, round',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, rounds',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, round, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, rounds, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -106,9 +106,9 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_matchplan'] = array(
 				'eval' => 'trim'
 			),
 		),
-		'round' => array(
+		'rounds' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_matchplan.round',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_matchplan.rounds',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_championshipmanager_domain_model_tournround',

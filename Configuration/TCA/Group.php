@@ -3,13 +3,13 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround'] = array(
-	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround']['ctrl'],
+$GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_group']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, ko, shortname, position, groups',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, shortname, properties, matches, groupteams',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, ko, shortname, position, groups, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, shortname, properties, matches, groupteams, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -38,8 +38,8 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround'] = array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_championshipmanager_domain_model_tournround',
-				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_tournround.pid=###CURRENT_PID### AND tx_championshipmanager_domain_model_tournround.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_championshipmanager_domain_model_group',
+				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_group.pid=###CURRENT_PID### AND tx_championshipmanager_domain_model_group.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -99,46 +99,39 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround'] = array(
 
 		'name' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournround.name',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim'
+				'eval' => 'trim,required'
 			),
-		),
-		'ko' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournround.ko',
-			'config' => array(
-				'type' => 'check',
-				'default' => 0
-			)
 		),
 		'shortname' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournround.shortname',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.shortname',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim'
+				'eval' => 'trim,required'
 			),
 		),
-		'position' => array(
+		'properties' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournround.position',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.properties',
 			'config' => array(
-				'type' => 'input',
-				'size' => 4,
-				'eval' => 'int'
+				'type' => 'text',
+				'cols' => 40,
+				'rows' => 15,
+				'eval' => 'trim'
 			)
 		),
-		'groups' => array(
+		'matches' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournround.groups',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.matches',
 			'config' => array(
 				'type' => 'inline',
-				'foreign_table' => 'tx_championshipmanager_domain_model_group',
-				'foreign_field' => 'tournround',
+				'foreign_table' => 'tx_championshipmanager_domain_model_match',
+				'foreign_field' => 'tx_group',
 				'maxitems'      => 9999,
 				'appearance' => array(
 					'collapseAll' => 0,
@@ -150,8 +143,25 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround'] = array(
 			),
 
 		),
+		'groupteams' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_group.groupteams',
+			'config' => array(
+				'type' => 'inline',
+				'foreign_table' => 'tx_championshipmanager_domain_model_groupteams',
+				'minitems' => 0,
+				'maxitems' => 1,
+				'appearance' => array(
+					'collapseAll' => 0,
+					'levelLinksPosition' => 'top',
+					'showSynchronizationLink' => 1,
+					'showPossibleLocalizationRecords' => 1,
+					'showAllLocalizationLink' => 1
+				),
+			),
+		),
 		
-		'matchplan' => array(
+		'tournround' => array(
 			'config' => array(
 				'type' => 'passthrough',
 			),

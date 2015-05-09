@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2015-04-10T10:25:41Z" product-name="championshipmanager">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T08:47:27Z" product-name="championshipmanager">
 		<header/>
 		<body>
 			<trans-unit id="tx_championshipmanager_domain_model_tournament">
@@ -24,8 +24,8 @@
 			<trans-unit id="tx_championshipmanager_domain_model_tournament.sportshall">
 				<source>Sportshall</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_tournament.team">
-				<source>Team</source>
+			<trans-unit id="tx_championshipmanager_domain_model_tournament.teams">
+				<source>Teams</source>
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_tournament.matchplan">
 				<source>Matchplan</source>
@@ -81,8 +81,8 @@
 			<trans-unit id="tx_championshipmanager_domain_model_matchplan.name">
 				<source>Name</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_matchplan.round">
-				<source>Round</source>
+			<trans-unit id="tx_championshipmanager_domain_model_matchplan.rounds">
+				<source>Rounds</source>
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_tournround">
 				<source>Tournround</source>
@@ -90,17 +90,35 @@
 			<trans-unit id="tx_championshipmanager_domain_model_tournround.name">
 				<source>Name</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_tournround.groupround">
-				<source>Groupround</source>
+			<trans-unit id="tx_championshipmanager_domain_model_tournround.ko">
+				<source>Ko</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_tournround.koround">
-				<source>Koround</source>
+			<trans-unit id="tx_championshipmanager_domain_model_tournround.shortname">
+				<source>Shortname</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_groupround">
-				<source>Groupround</source>
+			<trans-unit id="tx_championshipmanager_domain_model_tournround.position">
+				<source>Position</source>
 			</trans-unit>
-			<trans-unit id="tx_championshipmanager_domain_model_koround">
-				<source>Koround</source>
+			<trans-unit id="tx_championshipmanager_domain_model_tournround.groups">
+				<source>Groups</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_group">
+				<source>Group</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_group.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_group.shortname">
+				<source>Shortname</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_group.properties">
+				<source>Properties</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_group.matches">
+				<source>Matches</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_group.groupteams">
+				<source>Groupteams</source>
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_match">
 				<source>Match</source>
@@ -120,11 +138,68 @@
 			<trans-unit id="tx_championshipmanager_domain_model_match.homepointsset5">
 				<source>Homepointsset5</source>
 			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset1">
+				<source>Guestpointsset1</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset2">
+				<source>Guestpointsset2</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset3">
+				<source>Guestpointsset3</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset4">
+				<source>Guestpointsset4</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset5">
+				<source>Guestpointsset5</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.matchname">
+				<source>Matchname</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.matchnameshort">
+				<source>Matchnameshort</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.properties">
+				<source>Properties</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.number">
+				<source>Number</source>
+			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_match.hometeam">
 				<source>Hometeam</source>
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_match.guestteam">
 				<source>Guestteam</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams">
+				<source>Groupteams</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.groupfromranking">
+				<source>Groupfromranking</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.ranking">
+				<source>Ranking</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.points">
+				<source>Points</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.sets">
+				<source>Sets</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.balls">
+				<source>Balls</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.properties">
+				<source>Properties</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.team">
+				<source>Team</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.groupfrom">
+				<source>Groupfrom</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -10,7 +10,7 @@
 				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_tournament.gender">
-				<source>Gender</source>
+				<source>Geschlecht</source>
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_tournament.gender1">
 				<source>weiblich</source>
@@ -131,6 +131,63 @@
 			</trans-unit>
 			<trans-unit id="tx_championshipmanager_domain_model_match.guestteam">
 				<source>Guestteam</source>
+			</trans-unit>
+						<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset1">
+				<source>Guestpointsset1</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset2">
+				<source>Guestpointsset2</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset3">
+				<source>Guestpointsset3</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset4">
+				<source>Guestpointsset4</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.guestpointsset5">
+				<source>Guestpointsset5</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.matchname">
+				<source>Matchname</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.matchnameshort">
+				<source>Matchnameshort</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.properties">
+				<source>Properties</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_match.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams">
+				<source>Groupteams</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.groupfromranking">
+				<source>Groupfromranking</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.ranking">
+				<source>Ranking</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.points">
+				<source>Points</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.sets">
+				<source>Sets</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.balls">
+				<source>Balls</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.properties">
+				<source>Properties</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.team">
+				<source>Team</source>
+			</trans-unit>
+			<trans-unit id="tx_championshipmanager_domain_model_groupteams.groupfrom">
+				<source>Groupfrom</source>
 			</trans-unit>
 		</body>
 	</file>

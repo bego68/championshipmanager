@@ -29,7 +29,7 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
  ***************************************************************/
 
 /**
- * Tournround
+ * Runde
  */
 class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
@@ -41,19 +41,33 @@ class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $name = '';
 
 	/**
-	 * Gruppe
+	 * ko
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Groupround>
-	 * @cascade remove
+	 * @var boolean
 	 */
-	protected $groupround = NULL;
+	protected $ko = FALSE;
 
 	/**
-	 * koround
+	 * shortname
 	 *
-	 * @var \Volleyballserver\Championshipmanager\Domain\Model\Koround
+	 * @var string
 	 */
-	protected $koround = NULL;
+	protected $shortname = '';
+
+	/**
+	 * position
+	 *
+	 * @var integer
+	 */
+	protected $position = 0;
+
+	/**
+	 * Gruppen
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Group>
+	 * @cascade remove
+	 */
+	protected $groups = NULL;
 
 	/**
 	 * __construct
@@ -72,7 +86,7 @@ class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	protected function initStorageObjects() {
-		$this->groupround = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->groups = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -95,61 +109,108 @@ class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Adds a Groupround
+	 * Returns the ko
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Groupround $groupround
+	 * @return boolean $ko
+	 */
+	public function getKo() {
+		return $this->ko;
+	}
+
+	/**
+	 * Sets the ko
+	 *
+	 * @param boolean $ko
 	 * @return void
 	 */
-	public function addGroupround(\Volleyballserver\Championshipmanager\Domain\Model\Groupround $groupround) {
-		$this->groupround->attach($groupround);
+	public function setKo($ko) {
+		$this->ko = $ko;
 	}
 
 	/**
-	 * Removes a Groupround
+	 * Returns the boolean state of ko
 	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Groupround $grouproundToRemove The Groupround to be removed
+	 * @return boolean
+	 */
+	public function isKo() {
+		return $this->ko;
+	}
+
+	/**
+	 * Returns the shortname
+	 *
+	 * @return string $shortname
+	 */
+	public function getShortname() {
+		return $this->shortname;
+	}
+
+	/**
+	 * Sets the shortname
+	 *
+	 * @param string $shortname
 	 * @return void
 	 */
-	public function removeGroupround(\Volleyballserver\Championshipmanager\Domain\Model\Groupround $grouproundToRemove) {
-		$this->groupround->detach($grouproundToRemove);
+	public function setShortname($shortname) {
+		$this->shortname = $shortname;
 	}
 
 	/**
-	 * Returns the groupround
+	 * Returns the position
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Groupround> $groupround
+	 * @return integer $position
 	 */
-	public function getGroupround() {
-		return $this->groupround;
+	public function getPosition() {
+		return $this->position;
 	}
 
 	/**
-	 * Sets the groupround
+	 * Sets the position
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Groupround> $groupround
+	 * @param integer $position
 	 * @return void
 	 */
-	public function setGroupround(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $groupround) {
-		$this->groupround = $groupround;
+	public function setPosition($position) {
+		$this->position = $position;
 	}
 
 	/**
-	 * Returns the koround
+	 * Adds a Group
 	 *
-	 * @return \Volleyballserver\Championshipmanager\Domain\Model\Koround $koround
-	 */
-	public function getKoround() {
-		return $this->koround;
-	}
-
-	/**
-	 * Sets the koround
-	 *
-	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Koround $koround
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Group $group
 	 * @return void
 	 */
-	public function setKoround(\Volleyballserver\Championshipmanager\Domain\Model\Koround $koround) {
-		$this->koround = $koround;
+	public function addGroup(\Volleyballserver\Championshipmanager\Domain\Model\Group $group) {
+		$this->groups->attach($group);
+	}
+
+	/**
+	 * Removes a Group
+	 *
+	 * @param \Volleyballserver\Championshipmanager\Domain\Model\Group $groupToRemove The Group to be removed
+	 * @return void
+	 */
+	public function removeGroup(\Volleyballserver\Championshipmanager\Domain\Model\Group $groupToRemove) {
+		$this->groups->detach($groupToRemove);
+	}
+
+	/**
+	 * Returns the groups
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Group> $groups
+	 */
+	public function getGroups() {
+		return $this->groups;
+	}
+
+	/**
+	 * Sets the groups
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Group> $groups
+	 * @return void
+	 */
+	public function setGroups(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $groups) {
+		$this->groups = $groups;
 	}
 
 }

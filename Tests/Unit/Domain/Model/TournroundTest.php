@@ -76,26 +76,95 @@ class TournroundTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getGrouproundReturnsInitialValueForGroupround() {
+	public function getKoReturnsInitialValueForBoolean() {
+		$this->assertSame(
+			FALSE,
+			$this->subject->getKo()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setKoForBooleanSetsKo() {
+		$this->subject->setKo(TRUE);
+
+		$this->assertAttributeEquals(
+			TRUE,
+			'ko',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getShortnameReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getShortname()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setShortnameForStringSetsShortname() {
+		$this->subject->setShortname('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'shortname',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getPositionReturnsInitialValueForInteger() {
+		$this->assertSame(
+			0,
+			$this->subject->getPosition()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setPositionForIntegerSetsPosition() {
+		$this->subject->setPosition(12);
+
+		$this->assertAttributeEquals(
+			12,
+			'position',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getGroupsReturnsInitialValueForGroup() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->subject->getGroupround()
+			$this->subject->getGroups()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setGrouproundForObjectStorageContainingGrouproundSetsGroupround() {
-		$groupround = new \Volleyballserver\Championshipmanager\Domain\Model\Groupround();
-		$objectStorageHoldingExactlyOneGroupround = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$objectStorageHoldingExactlyOneGroupround->attach($groupround);
-		$this->subject->setGroupround($objectStorageHoldingExactlyOneGroupround);
+	public function setGroupsForObjectStorageContainingGroupSetsGroups() {
+		$group = new \Volleyballserver\Championshipmanager\Domain\Model\Group();
+		$objectStorageHoldingExactlyOneGroups = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneGroups->attach($group);
+		$this->subject->setGroups($objectStorageHoldingExactlyOneGroups);
 
 		$this->assertAttributeEquals(
-			$objectStorageHoldingExactlyOneGroupround,
-			'groupround',
+			$objectStorageHoldingExactlyOneGroups,
+			'groups',
 			$this->subject
 		);
 	}
@@ -103,49 +172,25 @@ class TournroundTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function addGrouproundToObjectStorageHoldingGroupround() {
-		$groupround = new \Volleyballserver\Championshipmanager\Domain\Model\Groupround();
-		$grouproundObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
-		$grouproundObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($groupround));
-		$this->inject($this->subject, 'groupround', $grouproundObjectStorageMock);
+	public function addGroupToObjectStorageHoldingGroups() {
+		$group = new \Volleyballserver\Championshipmanager\Domain\Model\Group();
+		$groupsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$groupsObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($group));
+		$this->inject($this->subject, 'groups', $groupsObjectStorageMock);
 
-		$this->subject->addGroupround($groupround);
+		$this->subject->addGroup($group);
 	}
 
 	/**
 	 * @test
 	 */
-	public function removeGrouproundFromObjectStorageHoldingGroupround() {
-		$groupround = new \Volleyballserver\Championshipmanager\Domain\Model\Groupround();
-		$grouproundObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
-		$grouproundObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($groupround));
-		$this->inject($this->subject, 'groupround', $grouproundObjectStorageMock);
+	public function removeGroupFromObjectStorageHoldingGroups() {
+		$group = new \Volleyballserver\Championshipmanager\Domain\Model\Group();
+		$groupsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$groupsObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($group));
+		$this->inject($this->subject, 'groups', $groupsObjectStorageMock);
 
-		$this->subject->removeGroupround($groupround);
+		$this->subject->removeGroup($group);
 
-	}
-
-	/**
-	 * @test
-	 */
-	public function getKoroundReturnsInitialValueForKoround() {
-		$this->assertEquals(
-			NULL,
-			$this->subject->getKoround()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setKoroundForKoroundSetsKoround() {
-		$koroundFixture = new \Volleyballserver\Championshipmanager\Domain\Model\Koround();
-		$this->subject->setKoround($koroundFixture);
-
-		$this->assertAttributeEquals(
-			$koroundFixture,
-			'koround',
-			$this->subject
-		);
 	}
 }

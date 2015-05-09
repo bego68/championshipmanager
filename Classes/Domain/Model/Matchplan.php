@@ -29,7 +29,7 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
  ***************************************************************/
 
 /**
- * Matchplan
+ * Spielplam
  */
 class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
@@ -41,12 +41,12 @@ class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $name = '';
 
 	/**
-	 * round
+	 * Runden
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Tournround>
 	 * @cascade remove
 	 */
-	protected $round = NULL;
+	protected $rounds = NULL;
 
 	/**
 	 * __construct
@@ -65,7 +65,7 @@ class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	protected function initStorageObjects() {
-		$this->round = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->rounds = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	public function addRound(\Volleyballserver\Championshipmanager\Domain\Model\Tournround $round) {
-		$this->round->attach($round);
+		$this->rounds->attach($round);
 	}
 
 	/**
@@ -104,26 +104,26 @@ class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	public function removeRound(\Volleyballserver\Championshipmanager\Domain\Model\Tournround $roundToRemove) {
-		$this->round->detach($roundToRemove);
+		$this->rounds->detach($roundToRemove);
 	}
 
 	/**
-	 * Returns the round
+	 * Returns the rounds
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Tournround> $round
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Tournround> $rounds
 	 */
-	public function getRound() {
-		return $this->round;
+	public function getRounds() {
+		return $this->rounds;
 	}
 
 	/**
-	 * Sets the round
+	 * Sets the rounds
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Tournround> $round
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Volleyballserver\Championshipmanager\Domain\Model\Tournround> $rounds
 	 * @return void
 	 */
-	public function setRound(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $round) {
-		$this->round = $round;
+	public function setRounds(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $rounds) {
+		$this->rounds = $rounds;
 	}
 
 }

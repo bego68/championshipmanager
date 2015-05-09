@@ -222,26 +222,26 @@ class TournamentTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getTeamReturnsInitialValueForTeam() {
+	public function getTeamsReturnsInitialValueForTeam() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->subject->getTeam()
+			$this->subject->getTeams()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setTeamForObjectStorageContainingTeamSetsTeam() {
+	public function setTeamsForObjectStorageContainingTeamSetsTeams() {
 		$team = new \Volleyballserver\Championshipmanager\Domain\Model\Team();
-		$objectStorageHoldingExactlyOneTeam = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$objectStorageHoldingExactlyOneTeam->attach($team);
-		$this->subject->setTeam($objectStorageHoldingExactlyOneTeam);
+		$objectStorageHoldingExactlyOneTeams = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneTeams->attach($team);
+		$this->subject->setTeams($objectStorageHoldingExactlyOneTeams);
 
 		$this->assertAttributeEquals(
-			$objectStorageHoldingExactlyOneTeam,
-			'team',
+			$objectStorageHoldingExactlyOneTeams,
+			'teams',
 			$this->subject
 		);
 	}
@@ -249,11 +249,11 @@ class TournamentTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function addTeamToObjectStorageHoldingTeam() {
+	public function addTeamToObjectStorageHoldingTeams() {
 		$team = new \Volleyballserver\Championshipmanager\Domain\Model\Team();
-		$teamObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
-		$teamObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($team));
-		$this->inject($this->subject, 'team', $teamObjectStorageMock);
+		$teamsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$teamsObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($team));
+		$this->inject($this->subject, 'teams', $teamsObjectStorageMock);
 
 		$this->subject->addTeam($team);
 	}
@@ -261,11 +261,11 @@ class TournamentTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function removeTeamFromObjectStorageHoldingTeam() {
+	public function removeTeamFromObjectStorageHoldingTeams() {
 		$team = new \Volleyballserver\Championshipmanager\Domain\Model\Team();
-		$teamObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
-		$teamObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($team));
-		$this->inject($this->subject, 'team', $teamObjectStorageMock);
+		$teamsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$teamsObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($team));
+		$this->inject($this->subject, 'teams', $teamsObjectStorageMock);
 
 		$this->subject->removeTeam($team);
 

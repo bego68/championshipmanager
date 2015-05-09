@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2015-04-10T10:25:41Z" product-name="championshipmanager">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T08:47:27Z" product-name="championshipmanager">
 		<header/>
 		<body>
 			<trans-unit id="name.description">
 				<source>name</source>
 			</trans-unit>
-			<trans-unit id="round.description">
-				<source>round</source>
+			<trans-unit id="rounds.description">
+				<source>Runden</source>
 			</trans-unit>
 		</body>
 	</file>

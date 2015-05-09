@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-09T08:47:27Z" product-name="championshipmanager">
+		<header/>
+		<body>
+			<trans-unit id="number.description">
+				<source>number</source>
+			</trans-unit>
+			<trans-unit id="groupfromranking.description">
+				<source>groupfromranking</source>
+			</trans-unit>
+			<trans-unit id="ranking.description">
+				<source>ranking</source>
+			</trans-unit>
+			<trans-unit id="points.description">
+				<source>points</source>
+			</trans-unit>
+			<trans-unit id="sets.description">
+				<source>sets</source>
+			</trans-unit>
+			<trans-unit id="balls.description">
+				<source>balls</source>
+			</trans-unit>
+			<trans-unit id="properties.description">
+				<source>properties</source>
+			</trans-unit>
+			<trans-unit id="team.description">
+				<source>Team</source>
+			</trans-unit>
+			<trans-unit id="groupfrom.description">
+				<source>kommt aus Gruppe</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

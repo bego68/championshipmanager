@@ -4,19 +4,19 @@
 		<header/>
 		<body>
 			<trans-unit id="name.description">
-				<source>name</source>
-			</trans-unit>
-			<trans-unit id="ko.description">
-				<source>ko</source>
+				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="shortname.description">
-				<source>shortname</source>
+				<source>Kurzname</source>
 			</trans-unit>
-			<trans-unit id="position.description">
-				<source>position</source>
+			<trans-unit id="properties.description">
+				<source>Zusatzinfos</source>
 			</trans-unit>
-			<trans-unit id="groups.description">
-				<source>Gruppen</source>
+			<trans-unit id="matches.description">
+				<source>matches</source>
+			</trans-unit>
+			<trans-unit id="groupteams.description">
+				<source>groupteams</source>
 			</trans-unit>
 		</body>
 	</file>

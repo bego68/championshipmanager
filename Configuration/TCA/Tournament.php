@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, gender, begin, end, type, sportshall, team, matchplan',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, gender, begin, end, type, sportshall, teams, matchplan',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, gender, begin, end, type, sportshall, team, matchplan, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, gender, begin, end, type, sportshall, teams, matchplan, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -114,7 +114,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 				'items' => array(
 					array('-- bitte wählen --', 0),
 					array('weiblich', 1),
-						array('männlich', 2),
+					array('männlich', 2),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -172,9 +172,9 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournament'] = array(
 			),
 
 		),
-		'team' => array(
+		'teams' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.team',
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_tournament.teams',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_championshipmanager_domain_model_team',

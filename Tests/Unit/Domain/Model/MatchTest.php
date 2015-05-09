@@ -168,7 +168,214 @@ class MatchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getHometeamReturnsInitialValueForTeam() {
+	public function getGuestpointsset1ReturnsInitialValueForInteger() {
+		$this->assertSame(
+			0,
+			$this->subject->getGuestpointsset1()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setGuestpointsset1ForIntegerSetsGuestpointsset1() {
+		$this->subject->setGuestpointsset1(12);
+
+		$this->assertAttributeEquals(
+			12,
+			'guestpointsset1',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getGuestpointsset2ReturnsInitialValueForInteger() {
+		$this->assertSame(
+			0,
+			$this->subject->getGuestpointsset2()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setGuestpointsset2ForIntegerSetsGuestpointsset2() {
+		$this->subject->setGuestpointsset2(12);
+
+		$this->assertAttributeEquals(
+			12,
+			'guestpointsset2',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getGuestpointsset3ReturnsInitialValueForInteger() {
+		$this->assertSame(
+			0,
+			$this->subject->getGuestpointsset3()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setGuestpointsset3ForIntegerSetsGuestpointsset3() {
+		$this->subject->setGuestpointsset3(12);
+
+		$this->assertAttributeEquals(
+			12,
+			'guestpointsset3',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getGuestpointsset4ReturnsInitialValueForInteger() {
+		$this->assertSame(
+			0,
+			$this->subject->getGuestpointsset4()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setGuestpointsset4ForIntegerSetsGuestpointsset4() {
+		$this->subject->setGuestpointsset4(12);
+
+		$this->assertAttributeEquals(
+			12,
+			'guestpointsset4',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getGuestpointsset5ReturnsInitialValueForInteger() {
+		$this->assertSame(
+			0,
+			$this->subject->getGuestpointsset5()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setGuestpointsset5ForIntegerSetsGuestpointsset5() {
+		$this->subject->setGuestpointsset5(12);
+
+		$this->assertAttributeEquals(
+			12,
+			'guestpointsset5',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getMatchnameReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getMatchname()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setMatchnameForStringSetsMatchname() {
+		$this->subject->setMatchname('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'matchname',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getMatchnameshortReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getMatchnameshort()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setMatchnameshortForStringSetsMatchnameshort() {
+		$this->subject->setMatchnameshort('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'matchnameshort',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getPropertiesReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getProperties()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setPropertiesForStringSetsProperties() {
+		$this->subject->setProperties('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'properties',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getNumberReturnsInitialValueForInteger() {
+		$this->assertSame(
+			0,
+			$this->subject->getNumber()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setNumberForIntegerSetsNumber() {
+		$this->subject->setNumber(12);
+
+		$this->assertAttributeEquals(
+			12,
+			'number',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getHometeamReturnsInitialValueForGroupteams() {
 		$this->assertEquals(
 			NULL,
 			$this->subject->getHometeam()
@@ -178,8 +385,8 @@ class MatchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setHometeamForTeamSetsHometeam() {
-		$hometeamFixture = new \Volleyballserver\Championshipmanager\Domain\Model\Team();
+	public function setHometeamForGroupteamsSetsHometeam() {
+		$hometeamFixture = new \Volleyballserver\Championshipmanager\Domain\Model\Groupteams();
 		$this->subject->setHometeam($hometeamFixture);
 
 		$this->assertAttributeEquals(
@@ -192,7 +399,7 @@ class MatchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getGuestteamReturnsInitialValueForTeam() {
+	public function getGuestteamReturnsInitialValueForGroupteams() {
 		$this->assertEquals(
 			NULL,
 			$this->subject->getGuestteam()
@@ -202,8 +409,8 @@ class MatchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setGuestteamForTeamSetsGuestteam() {
-		$guestteamFixture = new \Volleyballserver\Championshipmanager\Domain\Model\Team();
+	public function setGuestteamForGroupteamsSetsGuestteam() {
+		$guestteamFixture = new \Volleyballserver\Championshipmanager\Domain\Model\Groupteams();
 		$this->subject->setGuestteam($guestteamFixture);
 
 		$this->assertAttributeEquals(

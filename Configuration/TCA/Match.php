@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_championshipmanager_domain_model_match'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_match']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, homepointsset1, homepointsset2, homepointsset3, homepointsset4, homepointsset5, hometeam, guestteam',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, homepointsset1, homepointsset2, homepointsset3, homepointsset4, homepointsset5, guestpointsset1, guestpointsset2, guestpointsset3, guestpointsset4, guestpointsset5, matchname, matchnameshort, properties, number, hometeam, guestteam',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, homepointsset1, homepointsset2, homepointsset3, homepointsset4, homepointsset5, hometeam, guestteam, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, homepointsset1, homepointsset2, homepointsset3, homepointsset4, homepointsset5, guestpointsset1, guestpointsset2, guestpointsset3, guestpointsset4, guestpointsset5, matchname, matchnameshort, properties, number, hometeam, guestteam, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -142,40 +142,113 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_match'] = array(
 				'eval' => 'int'
 			)
 		),
+		'guestpointsset1' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.guestpointsset1',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
+		'guestpointsset2' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.guestpointsset2',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
+		'guestpointsset3' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.guestpointsset3',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
+		'guestpointsset4' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.guestpointsset4',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
+		'guestpointsset5' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.guestpointsset5',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
+		'matchname' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.matchname',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'matchnameshort' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.matchnameshort',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'properties' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.properties',
+			'config' => array(
+				'type' => 'text',
+				'cols' => 40,
+				'rows' => 15,
+				'eval' => 'trim'
+			)
+		),
+		'number' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.number',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
 		'hometeam' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.hometeam',
 			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_championshipmanager_domain_model_team',
+				'type' => 'select',
+				'foreign_table' => 'tx_championshipmanager_domain_model_groupteams',
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
 			),
 		),
 		'guestteam' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_match.guestteam',
 			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_championshipmanager_domain_model_team',
+				'type' => 'select',
+				'foreign_table' => 'tx_championshipmanager_domain_model_groupteams',
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
 			),
 		),
 		
+		'tx_group' => array(
+			'config' => array(
+				'type' => 'passthrough',
+			),
+		),
 	),
 );
