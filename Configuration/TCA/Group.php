@@ -149,8 +149,8 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_championshipmanager_domain_model_groupteams',
-				'minitems' => 0,
-				'maxitems' => 1,
+				'foreign_field' => 'tx_group',
+				'maxitems'      => 9999,
 				'appearance' => array(
 					'collapseAll' => 0,
 					'levelLinksPosition' => 'top',
@@ -159,6 +159,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_group'] = array(
 					'showAllLocalizationLink' => 1
 				),
 			),
+
 		),
 		
 		'tournround' => array(

@@ -175,8 +175,9 @@ class GroupTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function getGroupteamsReturnsInitialValueForGroupteams() {
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
-			NULL,
+			$newObjectStorage,
 			$this->subject->getGroupteams()
 		);
 	}
@@ -184,14 +185,41 @@ class GroupTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setGroupteamsForGroupteamsSetsGroupteams() {
-		$groupteamsFixture = new \Volleyballserver\Championshipmanager\Domain\Model\Groupteams();
-		$this->subject->setGroupteams($groupteamsFixture);
+	public function setGroupteamsForObjectStorageContainingGroupteamsSetsGroupteams() {
+		$groupteam = new \Volleyballserver\Championshipmanager\Domain\Model\Groupteams();
+		$objectStorageHoldingExactlyOneGroupteams = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneGroupteams->attach($groupteam);
+		$this->subject->setGroupteams($objectStorageHoldingExactlyOneGroupteams);
 
 		$this->assertAttributeEquals(
-			$groupteamsFixture,
+			$objectStorageHoldingExactlyOneGroupteams,
 			'groupteams',
 			$this->subject
 		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function addGroupteamToObjectStorageHoldingGroupteams() {
+		$groupteam = new \Volleyballserver\Championshipmanager\Domain\Model\Groupteams();
+		$groupteamsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$groupteamsObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($groupteam));
+		$this->inject($this->subject, 'groupteams', $groupteamsObjectStorageMock);
+
+		$this->subject->addGroupteam($groupteam);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeGroupteamFromObjectStorageHoldingGroupteams() {
+		$groupteam = new \Volleyballserver\Championshipmanager\Domain\Model\Groupteams();
+		$groupteamsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$groupteamsObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($groupteam));
+		$this->inject($this->subject, 'groupteams', $groupteamsObjectStorageMock);
+
+		$this->subject->removeGroupteam($groupteam);
+
 	}
 }

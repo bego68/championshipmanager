@@ -582,7 +582,7 @@
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
                             "relationName": "groupteams",
-                            "relationType": "zeroToOne",
+                            "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "uid": "1226952811689"
                         }
@@ -1117,7 +1117,7 @@
         }
     ],
     "log": {
-        "last_modified": "2015-05-09 08:47",
+        "last_modified": "2015-05-09 12:02",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }
