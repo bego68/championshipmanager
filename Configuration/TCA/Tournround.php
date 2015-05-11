@@ -15,7 +15,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround'] = array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
+
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -56,7 +56,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround'] = array(
 				'max' => 255,
 			)
 		),
-	
+
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -141,7 +141,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround'] = array(
 				'foreign_field' => 'tournround',
 				'maxitems'      => 9999,
 				'appearance' => array(
-					'collapseAll' => 0,
+					'collapseAll' => 1,
 					'levelLinksPosition' => 'top',
 					'showSynchronizationLink' => 1,
 					'showPossibleLocalizationRecords' => 1,
@@ -150,7 +150,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_tournround'] = array(
 			),
 
 		),
-		
+
 		'matchplan' => array(
 			'config' => array(
 				'type' => 'passthrough',

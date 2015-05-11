@@ -1,0 +1,25 @@
+<section class="table ">
+	<table>
+		<thead>
+			<tr>
+				<th>Pos.</th>
+				<th>Mannschaft</th>
+				<th>Punkte</th>
+				<th>Sätze</th>
+				<th>Bälle</th>
+			</tr>
+		</thead>
+		<tbody>
+			<f:for each="{group.groupteams}" as="groupteam">
+				<tr>
+					<td>{groupteam.ranking}</td>
+					<td>{groupteam.team.name}</td>
+					<td>{groupteam.points}</td>
+					<td>{groupteam.sets}</td>
+					<td>{groupteam.balls}</td>
+				</tr>
+		 	</f:for>
+		</tbody>
+	</table>
+		
+</section>
