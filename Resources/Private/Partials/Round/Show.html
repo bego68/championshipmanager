@@ -1,11 +1,13 @@
-<section class="round round-{round.position} row">
+<section class="round round-{round.position}">
 	<h3>{round.name}</h3>
-	<div class="col-md-3">
+	<div class="row">
 		<f:for each="{round.groups}" as="group"  iteration="groupIT">
-			<f:render partial="Group/Show" arguments="{group:group, ko:round.ko}" />
+			<div class="col-md-6">
+				<f:render partial="Group/Show" arguments="{group:group, ko:round.ko}" />
+			<div>
 			<f:if condition="{groupIT.isEven}">
 				</div
-				<div class="col-md-3">
+				<div class="row">
 			</f:if>
 	 	</f:for>
  	</div>
