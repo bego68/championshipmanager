@@ -2,7 +2,7 @@
 	<h3>{round.name}</h3>
 	<div class="row">
 		<f:for each="{round.groups}" as="group"  iteration="groupIT">
-			<div class="col-md-6">
+			<div class="col-md-6">{groupIT.isEven}
 				<f:render partial="Group/Show" arguments="{group:group, ko:round.ko}" />
 			<div>
 			<f:if condition="{groupIT.isEven}">
