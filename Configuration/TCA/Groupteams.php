@@ -165,6 +165,9 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.team',
 			'config' => array(
 				'type' => 'select',
+				'items' => array(
+					array('-- Bitte wählen --', 0),
+				),
 				'foreign_table' => 'tx_championshipmanager_domain_model_team',
 				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_team.pid = ###CURRENT_PID### ORDER BY NAME',
 				'minitems' => 0,
@@ -184,8 +187,8 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-							array('-- Label --', 0),
-					),
+					array('-- Bitte wählen --', 0),
+				),
 				'foreign_table' => 'tx_championshipmanager_domain_model_txgroup',
 				'foreign_table_where' => 'AND tx_championshipmanager_domain_model_txgroup.pid = ###CURRENT_PID### ORDER BY name',
 				'minitems' => 0,
