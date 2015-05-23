@@ -150,6 +150,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_txgroup'] = array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_championshipmanager_domain_model_groupteams',
 				'foreign_field' => 'txgroup',
+				'foreign_table_where' => ' ORDER BY tx_championshipmanager_domain_model_groupteams.ranking',
 				'maxitems'      => 9999,
 				'appearance' => array(
 					'collapseAll' => 1,
