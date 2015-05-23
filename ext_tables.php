@@ -230,7 +230,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
 		'dividers2tabs' => TRUE,
-
+		'default_sortby' => 'ORDER BY ranking,number',
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
 
