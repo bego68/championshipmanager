@@ -15,12 +15,13 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_team'] = array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
+
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => array(
@@ -35,6 +36,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_team'] = array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'items' => array(
 					array('', 0),
 				),
@@ -56,7 +58,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_team'] = array(
 				'max' => 255,
 			)
 		),
-	
+
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -187,7 +189,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_team'] = array(
 				'eval' => 'trim'
 			),
 		),
-		
+
 		'tournament' => array(
 			'config' => array(
 				'type' => 'passthrough',
