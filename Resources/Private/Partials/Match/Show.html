@@ -4,6 +4,17 @@
 	<td>{match.court}</td>
 	<td>{match.number}</td>
 	<td>{match.hometeam.team.name} - {match.guestteam.team.name}</td>
-	<td>{match.homepointsset1}:{match.guestpointsset1} {match.homepointsset2}:{match.guestpointsset2} {match.homepointsset3}:{match.guestpointsset3}</td>
+	<td>
+		<f:security.ifAuthenticated>
+		<f:then>
+			<f:link.action controller="Match" action="edit" arguments="{match : match}">
+				{match.homepointsset1}:{match.guestpointsset1} {match.homepointsset2}:{match.guestpointsset2} {match.homepointsset3}:{match.guestpointsset3}
+			</f:link.action>
+		</f:then>
+		<f:else>
+			{match.homepointsset1}:{match.guestpointsset1} {match.homepointsset2}:{match.guestpointsset2} {match.homepointsset3}:{match.guestpointsset3}
+		</f:else>
+		</f:security.ifAuthenticated>
+	</td>
 </tr>
 

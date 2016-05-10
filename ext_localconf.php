@@ -8,11 +8,13 @@ if (!defined('TYPO3_MODE')) {
 	'Championshipmanager',
 	array(
 		'Tournament' => 'list, edit, show, delete, update, create, new',
+		'Match' => 'edit, update',
 		
 	),
 	// non-cacheable actions
 	array(
 		'Tournament' => 'list, edit, show, delete, update, create, new',
+		'Match' => 'edit, update',
 		
 	)
 );
