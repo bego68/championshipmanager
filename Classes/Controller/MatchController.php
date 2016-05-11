@@ -61,7 +61,7 @@ class MatchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	public function updateAction(\Volleyballserver\Championshipmanager\Domain\Model\Match $match) {
 		$this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->matchRepository->update($match);
-		$this->redirect('list');
+		$this->redirect('list', 'Tournament');
 	}
 
 }

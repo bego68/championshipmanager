@@ -18,9 +18,15 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:flashMessages renderMode="div" />
 
 <f:render partial="FormErrors" arguments="{object:Match}" />
-
-<f:form action="update" name="match" object="{match}" >
-<f:render partial="Match/FormFields" arguments="{match:match}" />
-	<f:form.submit value="Speichern" />
-</f:form>
+<f:security.ifAuthenticated>
+		<f:then>
+			<f:form action="update" name="match" object="{match}" >
+				<f:render partial="Match/FormFields" arguments="{match:match}" />
+				<f:form.submit value="Speichern" />
+			</f:form>
+		</f:then>
+		<f:else>
+			Sie müssen sich einloggen, um Ergebnisse einzugeben
+		</f:else>
+		</f:security.ifAuthenticated>
 </f:section>
