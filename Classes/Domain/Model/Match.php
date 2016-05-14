@@ -560,7 +560,7 @@ class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return integer
 	 */
 	private function getHomeWonSet2(){
-		return ($this->homepointsset2 > $this->guestpointsset1) ? 1 : 0;
+		return ($this->homepointsset2 > $this->guestpointsset2) ? 1 : 0;
 	}
 
 	/**
