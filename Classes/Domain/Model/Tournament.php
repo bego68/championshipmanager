@@ -304,4 +304,12 @@ class Tournament extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->matchplan = $matchplan;
 	}
 
+	/**
+	 *
+	 */
+	public function calculateTables(){
+		if ($this->matchplan){
+				$this->matchplan->calculateTables();
+		}
+	}
 }

@@ -527,4 +527,215 @@ class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->guestteam = $guestteam;
 	}
 
+	/**
+	 * get total points of hometeam
+	 *
+	 * @return integer
+	 */
+	public function getHomepointsTotal(){
+		return $this->homepointsset1 + $this->homepointsset2 + $this->homepointsset3 + $this->homepointsset4 + $this->homepointsset5;
+	}
+
+	/**
+	 * get total points of hometeam
+	 *
+	 * @return integer
+	 */
+	public function getGuestpointsTotal(){
+		return $this->guestpointsset1 + $this->guestpointsset2 + $this->guestpointsset3 + $this->guestepointsset4 + $this->guestpointsset5;
+	}
+
+	/**
+	 * get homtteam won set 1
+	 *
+	 * @return integer
+	 */
+	private function getHomeWonSet1(){
+		return ($this->homepointsset1 > $this->guestpointsset1) ? 1 : 0;
+	}
+
+	/**
+	 * get homtteam won set 2
+	 *
+	 * @return integer
+	 */
+	private function getHomeWonSet2(){
+		return ($this->homepointsset2 > $this->guestpointsset1) ? 1 : 0;
+	}
+
+	/**
+	 * get homtteam won set 3
+	 *
+	 * @return integer
+	 */
+	private function getHomeWonSet3(){
+		return ($this->homepointsset3 > $this->guestpointsset3) ? 1 : 0;
+	}
+
+	/**
+	 * get homtteam won set 4
+	 *
+	 * @return integer
+	 */
+	private function getHomeWonSet4(){
+		return ($this->homepointsset4 > $this->guestpointsset4) ? 1 : 0;
+	}
+
+	/**
+	 * get homtteam won set 5
+	 *
+	 * @return integer
+	 */
+	private function getHomeWonSet5(){
+		return ($this->homepointsset5 > $this->guestpointsset5) ? 1 : 0;
+	}
+
+	/**
+	 * get sets homtteam won
+	 *
+	 * @return integer
+	 */
+	public function getHomeWonSets(){
+		return $this->getHomeWonSet1() + $this->getHomeWonSet2() + $this->getHomeWonSet3() + $this->getHomeWonSet4() + $this->getHomeWonSet5();
+	}
+
+	/**
+	 * get guestteam won set 1
+	 *
+	 * @return integer
+	 */
+	private function getGuestWonSet1(){
+		return ($this->homepointsset1 < $this->guestpointsset1) ? 1 : 0;
+	}
+
+	/**
+	 * get guestteam won set 2
+	 *
+	 * @return integer
+	 */
+	private function getGuestWonSet2(){
+		return ($this->homepointsset2 < $this->guestpointsset1) ? 1 : 0;
+	}
+
+	/**
+	 * get guestteam won set 3
+	 *
+	 * @return integer
+	 */
+	private function getGuestWonSet3(){
+		return ($this->homepointsset3 < $this->guestpointsset3) ? 1 : 0;
+	}
+
+	/**
+	 * get guestteam won set 4
+	 *
+	 * @return integer
+	 */
+	private function getGuestWonSet4(){
+		return ($this->homepointsset4 < $this->guestpointsset4) ? 1 : 0;
+	}
+
+	/**
+	 * get guestteam won set 5
+	 *
+	 * @return integer
+	 */
+	private function getGuestWonSet5(){
+		return ($this->homepointsset5 < $this->guestpointsset5) ? 1 : 0;
+	}
+
+	/**
+	 * get sets guestteam won
+	 *
+	 * @return integer
+	 */
+	public function getGuestWonSets(){
+		return $this->getGuestWonSet1() + $this->getGuestWonSet2() + $this->getGuestWonSet3() + $this->getGuestWonSet4() + $this->getGuestWonSet5();
+	}
+
+	/**
+	 *
+	 * @return integer
+	 */
+	public function getHomePoints(){
+
+		switch ($this->getHomeWonSets()){
+			case 3: return $this->getPoints3SetsWon( $this->getGuestWonSets() );
+				break;
+
+			case 2: return $this->getPoints2SetsWon( $this->getGuestWonSets() );
+			break;
+
+			default: return 0;
+		}
+
+	}
+
+	/**
+	 *
+	 * @return integer
+	 */
+	public function getGuestPoints(){
+
+		switch ($this->getGuestWonSets()){
+			case 3: return $this->getPoints3SetsWon( $this->getHomeWonSets() );
+			break;
+
+			case 2: return $this->getPoints2SetsWon( $this->getHomeWonSets() );
+			break;
+
+			default: return 0;
+		}
+
+	}
+
+	/**
+	 *
+	 * @param integer $opositeSetsWon
+	 * @return integer
+	 */
+	private function getPoints3SetsWon( $opositeSetsWon){
+		if ($opositeSetsWon<2){
+			return 3;
+		} else {
+			return 2;
+		}
+	}
+
+	/**
+	 *
+	 * @param integer $opositeSetsWon
+	 * @return integer
+	 */
+	private function getPoints2SetsWon( $opositeSetsWon){
+		if ($opositeSetsWon==3){
+			return 1;
+		} else {
+			return 2;
+		}
+	}
+
+	/**
+	 *
+	 * @return integer
+	 */
+	public function getHomeWon(){
+		if ($this->getHomeWonSets() > $this->getGuestWonSets()){
+			return 1;
+		}
+		return 0;
+	}
+
+	/**
+	 *
+	 * @return integer
+	 */
+	public function getGuestWon(){
+		if ($this->getHomeWonSets() < $this->getGuestWonSets()){
+			return 1;
+		}
+		return 0;
+	}
+
+
 }

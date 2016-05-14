@@ -66,14 +66,35 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @var integer
 	 */
-	protected $sets = 0;
+	protected $wonsets = 0;
+
+	/**
+	 * Sätze
+	 *
+	 * @var integer
+	 */
+	protected $lostsets = 0;
 
 	/**
 	 * Bälle
 	 *
 	 * @var integer
 	 */
-	protected $balls = 0;
+	protected $wonballs = 0;
+
+/**
+	 * Bälle
+	 *
+	 * @var integer
+	 */
+	protected $lostballs = 0;
+
+	/**
+	 * gewonnene Spiele
+	 *
+	 * @var integer
+	 */
+	protected $wonmatches = 0;
 
 	/**
 	 * Eigenschaften
@@ -154,6 +175,103 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
+	 * Returns the won balls
+	 *
+	 * @return integer $wonballs
+	 */
+	public function getWonballs() {
+		return $this->wonballs;
+	}
+
+	/**
+	 * Sets the won balls
+	 *
+	 * @param integer $wonballs
+	 * @return void
+	 */
+	public function setWonballs($wonballs) {
+		$this->wonballs = $wonballs;
+	}
+
+	/**
+	 * Sets the lost balls
+	 *
+	 * @param integer $lostballs
+	 * @return void
+	 */
+	public function setLostballs($lostballs) {
+		$this->lostballs = $lostballs;
+	}
+
+	/**
+	 * Returns the lost balls
+	 *
+	 * @return integer $lostballs
+	 */
+	public function getLostballs() {
+		return $this->lostballs;
+	}
+
+	/**
+	 * Returns the won wonmatches
+	 *
+	 * @return integer $wonmatches
+	 */
+	public function getWonmatches() {
+		return $this->wonmatches;
+	}
+
+	/**
+	 * Sets the won matches
+	 *
+	 * @param integer $wonmatches
+	 * @return void
+	 */
+	public function setWonmatches($wonmatches) {
+		$this->wonmatches = $wonmatches;
+	}
+
+
+
+	/**
+	 * Returns the wonsets
+	 *
+	 * @return integer $wonsets
+	 */
+	public function getWonsets() {
+		return $this->wonsets;
+	}
+
+	/**
+	 * Sets the wonsets
+	 *
+	 * @param integer $wonsets
+	 * @return void
+	 */
+	public function setWonsets($wonsets) {
+		$this->wonsets = $wonsets;
+	}
+
+	/**
+	 * Returns the lostsets
+	 *
+	 * @return integer $lostsets
+	 */
+	public function getLostsets() {
+		return $this->lostsets;
+	}
+
+	/**
+	 * Sets the lost sets
+	 *
+	 * @param integer $lostsets
+	 * @return void
+	 */
+	public function setLostsets($lostsets) {
+		$this->lostsets = $lostsets;
+	}
+
+	/**
 	 * Returns the points
 	 *
 	 * @return integer $points
@@ -170,44 +288,6 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setPoints($points) {
 		$this->points = $points;
-	}
-
-	/**
-	 * Returns the sets
-	 *
-	 * @return integer $sets
-	 */
-	public function getSets() {
-		return $this->sets;
-	}
-
-	/**
-	 * Sets the sets
-	 *
-	 * @param integer $sets
-	 * @return void
-	 */
-	public function setSets($sets) {
-		$this->sets = $sets;
-	}
-
-	/**
-	 * Returns the balls
-	 *
-	 * @return integer $balls
-	 */
-	public function getBalls() {
-		return $this->balls;
-	}
-
-	/**
-	 * Sets the balls
-	 *
-	 * @param integer $balls
-	 * @return void
-	 */
-	public function setBalls($balls) {
-		$this->balls = $balls;
 	}
 
 	/**
@@ -267,4 +347,29 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->groupfrom = $groupfrom;
 	}
 
+	public function reset(){
+		$this->lostballs = 0;
+		$this->lostsets = 0;
+		$this->wonballs = 0;
+		$this->wonsets = 0;
+		$this->wonmatches = 0;
+		$this->ranking = 1;
+		$this->points = 0;
+	}
+
+	public function getSetQuotient(){
+		if ($this->lostsets>0){
+			return $this->wonsets / $this->lostsets;
+		}
+
+		return 'max';
+	}
+
+	public function getBallQuotient(){
+		if ($this->lostballs>0){
+			return $this->wonballs / $this->lostballs;
+		}
+
+		return 'max';
+	}
 }

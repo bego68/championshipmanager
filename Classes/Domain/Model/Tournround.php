@@ -213,4 +213,12 @@ class Tournround extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->groups = $groups;
 	}
 
+	public function calculateTables(){
+		if ($this->groups){
+			foreach ($this->groups as $group){
+				$group->calculateTable();
+			}
+		}
+	}
+
 }

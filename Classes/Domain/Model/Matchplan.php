@@ -126,4 +126,13 @@ class Matchplan extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->rounds = $rounds;
 	}
 
+	public function calculateTables(){
+		if ($this->rounds ){
+			foreach ($this->rounds as $round){
+				$round->calculateTables();
+			}
+
+		}
+	}
+
 }

@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, groupfromranking, ranking, points, sets, balls, properties, team, groupfrom',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, groupfromranking, ranking, points, wonsets, lostsets, wonballs, lostballs, wonmatches, properties, team, groupfrom',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, number, groupfromranking, ranking, points, sets, balls, properties, team, groupfrom, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, number, groupfromranking, ranking, points, wonsets, lostsets, wonballs, lostballs, wonmatches, properties, team, groupfrom, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -135,7 +135,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 				'eval' => 'int'
 			)
 		),
-		'sets' => array(
+		'wonsets' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.sets',
 			'config' => array(
@@ -144,7 +144,16 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 				'eval' => 'int'
 			)
 		),
-		'balls' => array(
+		'lostsets' => array(
+				'exclude' => 1,
+				'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.sets',
+				'config' => array(
+						'type' => 'input',
+						'size' => 4,
+						'eval' => 'int'
+				)
+		),
+		'wonballs' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.balls',
 			'config' => array(
@@ -152,6 +161,24 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 				'size' => 4,
 				'eval' => 'int'
 			)
+		),
+		'lostballs' => array(
+				'exclude' => 1,
+				'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.balls',
+				'config' => array(
+						'type' => 'input',
+						'size' => 4,
+						'eval' => 'int'
+				)
+		),
+		'wonmatches' => array(
+				'exclude' => 1,
+				'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.balls',
+				'config' => array(
+						'type' => 'input',
+						'size' => 4,
+						'eval' => 'int'
+				)
 		),
 		'properties' => array(
 			'exclude' => 1,

@@ -28,6 +28,9 @@ namespace Volleyballserver\Championshipmanager\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use \Volleyballserver\Championshipmanager\Domain\Model\Groupteams;
+use \Volleyballserver\Championshipmanager\Domain\Model\Match;
+
 /**
  * Gruppe
  */
@@ -227,5 +230,70 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setGroupteams(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $groupteams) {
 		$this->groupteams = $groupteams;
 	}
+
+	/**
+	 * calculate table
+	 */
+	public function calculateTable(){
+		if ($this->groupteams){
+			foreach ($this->groupteams as $team){
+				$this->calulatePointsTeam($team);
+			}
+
+		}
+	}
+
+	/**
+	 *
+	 * @param Groupteams $team
+	 */
+	private function calulatePointsTeam(Groupteams $team){
+		$team->reset();
+		if($this->matches){
+			foreach ($this->matches as $match){
+				$this->addPointsMatchTeam($team, $match);
+			}
+		}
+	}
+
+	/**
+	 *
+	 * @param Groupteams $team
+	 * @param Match $match
+	 */
+	private function addPointsMatchTeam(Groupteams $team, Match $match){
+		if ($team === $match->getHometeam()){
+			$this->addPointsMatchHomeTeam($team, $match);
+		}
+	}
+
+	/**
+	 *
+	 * @param Groupteams $hometeam
+	 * @param Match $match
+	 */
+	private function addPointsMatchHomeTeam(Groupteams $hometeam, Match $match){
+		$hometeam->setPoints($hometeam->getPoints() + $match->getHomePoints());
+		$hometeam->setWonballs($hometeam->getWonballs() + $match->getHomepointsTotal() );
+		$hometeam->setWonsets($hometeam->getWonsets() + $match->getHomeWonSets());
+		$hometeam->setLostballs($hometeam->getLostballs() + $match->getGuestpointsTotal() );
+		$hometeam->setLostsets($hometeam->getLostsets() + $match->getGuestWonSets());
+		$hometeam->setWonmatches($hometeam->getWonmatches() + $match->getHomeWon());
+	}
+
+	/**
+	 *
+	 * @param Groupteams $guestteam
+	 * @param Match $match
+	 */
+	private function addPointsMatchGuestTeam(Groupteams $guestteam, Match $match){
+		$guestteam->setPoints($guestteam->getPoints() + $match->getGuestPoints());
+		$guestteam->setWonballs($guestteam->getWonballs() + $match->getGuestpointsTotal() );
+		$guestteam->setWonsets($guestteam->getWonsets() + $match->getGuestWonSets());
+		$guestteam->setLostballs($guestteam->getLostballs() + $match->getHomepointsTotal() );
+		$guestteam->setLostsets($guestteam->getLostsets() + $match->getHomeWonSets());
+		$guestteam->setWonmatches($guestteam->getWonmatches() + $match->getGuestWon());
+	}
+
 
 }

@@ -58,6 +58,8 @@ class TournamentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * @return void
 	 */
 	public function showAction(\Volleyballserver\Championshipmanager\Domain\Model\Tournament $tournament) {
+		$tournament->calculateTables();
+		$this->tournamentRepository->update($tournament);
 		$this->view->assign('tournament', $tournament);
 	}
 
@@ -125,7 +127,7 @@ class TournamentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * @return void
 	 */
 	public function listreadAction() {
-		
+
 	}
 
 }
