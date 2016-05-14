@@ -359,7 +359,7 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	public function getSetQuotient(){
 		if ($this->lostsets>0){
-			return $this->wonsets / $this->lostsets;
+			return number_format($this->wonsets / $this->lostsets,3,",",".");
 		}
 
 		return 'max';
@@ -367,7 +367,7 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	public function getBallQuotient(){
 		if ($this->lostballs>0){
-			return $this->wonballs / $this->lostballs;
+			return number_format($this->wonballs / $this->lostballs,3,",",".");
 		}
 
 		return 'max';
