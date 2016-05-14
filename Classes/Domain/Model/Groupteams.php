@@ -376,7 +376,7 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	public function setTeamFromPreviousRound(){
 		if ($this->groupfrom && $this->groupfrom->isFinished()){
-			echo '<br>' . $this->groupfrom->getName();
+			//echo '<br>' . $this->groupfrom->getName();
 			if ($team = $this->getTeamFromGroup($this->groupfrom)){
 				$this->setTeam($team);
 			}
