@@ -736,6 +736,12 @@ class Match extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		}
 		return 0;
 	}
-
+	/**
+	 *
+	 * @return boolean
+	 */
+	public function isFinished(){
+		return (($this->getHomePoints() + $this->getGuestPoints()) > 0);
+	}
 
 }

@@ -395,6 +395,15 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		if ($this->groupteams){
 			$groupteams = $this->getGroupteams()->toArray();
 			foreach ($groupteams as $team){
+				if ($team->getTeam()){
+					//echo '<br><b>' . $team->getTeam()->getName()  . '(ranking: ' . $team->getRanking() . ' ) </b>:<br>';
+				}
+				$this->calculateRankingTeam($team);
+			}
+			foreach ($groupteams as $team){
+				if ($team->getTeam()){
+					//echo '<br><b>' . $team->getTeam()->getName()  . '(ranking: ' . $team->getRanking() . ' ) </b>:<br>';
+				}
 				$this->calculateRankingTeam($team);
 			}
 		}
@@ -404,6 +413,9 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		if ($this->groupteams){
 			foreach ($this->groupteams as $team2){
 				$betterTeam = $this->returnBetterTeam( $team1,  $team2);
+				if ($team2->getTeam()){
+					//echo $team2->getTeam()->getName(). '(ranking: ' . $team2->getRanking() . " ): " . $betterTeam . '<br>';
+				}
 				switch ($betterTeam){
 					case 0: $this->setRankingSameRank( $team1,  $team2);
 						break;
@@ -422,7 +434,6 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param Groupteams $team2
 	 */
 	private function setRankingSameRank(Groupteams $team1,Groupteams $team2){
-
 
 		if ($team1->getRanking() < $team2->getRanking()){
 			$team2->setRanking($team1->getRanking());
@@ -466,6 +477,17 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$h = $team1->getRanking();
 		$team1->setRanking($team2->getRanking());
 		$team2->setRanking($h);
+	}
+
+	public function isFinished(){
+		/** @var boolean */
+		$result = TRUE;
+		if ($this->matches){
+			foreach ($this->matches as $match){
+				$result = $result and $match->isFinished();
+			}
+		}
+		return $result;
 	}
 
 }

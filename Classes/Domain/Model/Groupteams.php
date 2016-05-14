@@ -372,4 +372,9 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 		return 'max';
 	}
+
+
+	public function getTeamFromPreviousRound(){
+
+	}
 }
