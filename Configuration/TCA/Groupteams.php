@@ -216,6 +216,7 @@ $GLOBALS['TCA']['tx_championshipmanager_domain_model_groupteams'] = array(
 			'label' => 'LLL:EXT:championshipmanager/Resources/Private/Language/locallang_db.xlf:tx_championshipmanager_domain_model_groupteams.groupfrom',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'items' => array(
 					array('-- Bitte wählen --', 0),
 				),
