@@ -374,7 +374,24 @@ class Groupteams extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 
-	public function getTeamFromPreviousRound(){
+	public function setTeamFromPreviousRound(){
+		if ($this->groupfrom && $this->groupfrom->isFinished()){
+			echo '<br>' . $this->groupfrom->getName();
+			if ($team = $this->getTeamFromGroup($this->groupfrom)){
+				$this->setTeam($team);
+			}
+		}
+	}
 
+	private function getTeamFromGroup(TxGroup $group){
+		if ($group->getGroupteams()){
+			foreach ($group->getGroupteams() as $groupteam){
+				if ($groupteam->getRanking() == $this->groupfromranking){
+
+					return $groupteam->getTeam();
+				}
+			}
+		}
+		return NULL;
 	}
 }

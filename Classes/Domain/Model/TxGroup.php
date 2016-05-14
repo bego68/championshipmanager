@@ -238,6 +238,7 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 			}
 		$this->calculateRanking();
 		}
+		$this->setTeamsFromPreviousRound();
 	}
 
 	/**
@@ -387,6 +388,19 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return 0;
 	}
 
+
+	/**
+	 *
+	 */
+	public function setTeamsFromPreviousRound(){
+
+		if ($this->groupteams){
+			foreach ($this->groupteams as $groupteam){
+				$groupteam->setTeamFromPreviousRound();
+			}
+		}
+	}
+
 	/**
 	 *
 	 */
@@ -482,9 +496,9 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function isFinished(){
 		/** @var boolean */
 		$result = TRUE;
-		if ($this->matches){
+		if ($this->getMatches()){
 			foreach ($this->matches as $match){
-				$result = $result and $match->isFinished();
+				$result = $result && $match->isFinished();
 			}
 		}
 		return $result;
