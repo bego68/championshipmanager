@@ -236,7 +236,7 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 			foreach ($this->groupteams as $team){
 				$this->calulatePointsTeam($team);
 			}
-
+		$this->calculateRanking();
 		}
 	}
 
@@ -295,33 +295,40 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$guestteam->setWonmatches($guestteam->getWonmatches() + $match->getGuestWon());
 	}
 
-
+	/**
+	 *
+	 * @param Groupteams $team1
+	 * @param Groupteams $team2
+	 * @return integer
+	 */
 	private function returnBetterTeam(Groupteams $team1, Groupteams $team2){
 		/** @var integer */
 		$result = 0;
 
 		// 1. Punkte
-		$result = returnBetterTeamsFromPoints($team1,  $team2);
+		$result = $this->returnBetterTeamsFromPoints($team1,  $team2);
 		if ($result > 0){
 			return $result;
 		}
 
 		// 2. gewonnene Spielen
-		$result = returnBetterTeamsFromWonmatches($team1,  $team2);
+		$result = $this->returnBetterTeamsFromWonmatches($team1,  $team2);
 		if ($result > 0){
 			return $result;
 		}
 
 		// 3. gewonnene Satzquotien
-		$result = returnBetterTeamsFromSetQuotient($team1,  $team2);
+		$result = $this->returnBetterTeamsFromSetQuotient($team1,  $team2);
 		if ($result > 0){
 			return $result;
 		}
 		// 4. gewonnene Ballquotien
-		$result = returnBetterTeamsFromBallQuotient($team1,  $team2);
+		$result = $this->returnBetterTeamsFromBallQuotient($team1,  $team2);
 		if ($result > 0){
 			return $result;
 		}
+
+		return 0;
 
 
 	}
@@ -332,7 +339,7 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param Groupteams $team2
 	 * @return integer
 	 */
-	private function returnBetterTeamsPoints(Groupteams $team1, Groupteams $team2){
+	private function returnBetterTeamsFromPoints(Groupteams $team1, Groupteams $team2){
 		if ($team1->getPoints() > $team2->getPoints() ) return 1;
 		if ($team2->getPoints() > $team1->getPoints() ) return 2;
 		return 0;
@@ -357,10 +364,108 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return integer
 	 */
 	private function returnBetterTeamsFromSetQuotient(Groupteams $team1, Groupteams $team2){
-		if ($team1->getSetQuotient() == 'max' && getSetQuotient() == 'max' ) return 1;
-		if ($team2->getWonsets() > $team1->getWonsets() ) return 2;
+		if ($team1->getSetQuotient() == 'max' && $team2->getSetQuotient() == 'max' ) return 0;
+		if ($team1->getSetQuotient() == 'max' && $team2->getSetQuotient() != 'max' ) return 1;
+		if ($team2->getSetQuotient() == 'max' && $team1->getSetQuotient() != 'max' ) return 2;
+		if ($team1->getSetQuotient() > $team2->getSetQuotient() ) return 1;
+		if ($team2->getSetQuotient() > $team1->getSetQuotient() ) return 2;
 		return 0;
 	}
 
+	/**
+	 *
+	 * @param Groupteams $team1
+	 * @param Groupteams $team2
+	 * @return integer
+	 */
+	private function returnBetterTeamsFromBallQuotient(Groupteams $team1, Groupteams $team2){
+		if ($team1->getBallQuotient() == 'max' && $team2->getBallQuotient() == 'max' ) return 0;
+		if ($team1->getBallQuotient() == 'max' && $team2->getBallQuotient() != 'max' ) return 1;
+		if ($team2->getBallQuotient() == 'max' && $team1->getBallQuotient() != 'max' ) return 2;
+		if ($team1->getBallQuotient() > $team2->getBallQuotient() ) return 1;
+		if ($team2->getBallQuotient() > $team1->getBallQuotient() ) return 2;
+		return 0;
+	}
+
+	/**
+	 *
+	 */
+	public function calculateRanking(){
+
+		if ($this->groupteams){
+			$groupteams = $this->getGroupteams()->toArray();
+			foreach ($groupteams as $team){
+				$this->calculateRankingTeam($team);
+			}
+		}
+	}
+
+	public function calculateRankingTeam(Groupteams $team1){
+		if ($this->groupteams){
+			foreach ($this->groupteams as $team2){
+				$betterTeam = $this->returnBetterTeam( $team1,  $team2);
+				switch ($betterTeam){
+					case 0: $this->setRankingSameRank( $team1,  $team2);
+						break;
+					case 1: $this->setRankingTeam1BetterRanked($team1, $team2);
+						break;
+					case 2: $this->setRankingTeam2BetterRanked($team1, $team2);
+						break;
+				}
+
+			}
+		}
+	}
+	/**
+	 *
+	 * @param Groupteams $team1
+	 * @param Groupteams $team2
+	 */
+	private function setRankingSameRank(Groupteams $team1,Groupteams $team2){
+
+
+		if ($team1->getRanking() < $team2->getRanking()){
+			$team2->setRanking($team1->getRanking());
+		}
+		if ($team1->getRanking() > $team2->getRanking()){
+			$team1->setRanking($team2->getRanking());
+		}
+	}
+
+	/**
+	 *
+	 * @param Groupteams $team1
+	 * @param Groupteams $team2
+	 */
+	private function setRankingTeam1BetterRanked(Groupteams $team1,Groupteams $team2){
+		if ($team1->getRanking() > $team2->getRanking()){
+			$this->switchRanking($team1,$team2);
+		}
+		if ($team1->getRanking() == $team2->getRanking()){
+			$team2->setRanking($team2->getRanking() + 1);
+		}
+	}
+
+	/**
+	 *
+	 * @param Groupteams $team1
+	 * @param Groupteams $team2
+	 */
+	private function setRankingTeam2BetterRanked(Groupteams $team1,Groupteams $team2){
+
+		if ($team1->getRanking() < $team2->getRanking()){
+			$this->switchRanking($team1,$team2);
+		}
+		if ($team1->getRanking() == $team2->getRanking()){
+			$team1->setRanking($team1->getRanking() + 1);
+		}
+	}
+
+	private function switchRanking(Groupteams $team1,Groupteams $team2){
+		/** @var integer */
+		$h = $team1->getRanking();
+		$team1->setRanking($team2->getRanking());
+		$team2->setRanking($h);
+	}
 
 }
