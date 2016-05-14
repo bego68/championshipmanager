@@ -296,4 +296,71 @@ class TxGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 
+	private function returnBetterTeam(Groupteams $team1, Groupteams $team2){
+		/** @var integer */
+		$result = 0;
+
+		// 1. Punkte
+		$result = returnBetterTeamsFromPoints($team1,  $team2);
+		if ($result > 0){
+			return $result;
+		}
+
+		// 2. gewonnene Spielen
+		$result = returnBetterTeamsFromWonmatches($team1,  $team2);
+		if ($result > 0){
+			return $result;
+		}
+
+		// 3. gewonnene Satzquotien
+		$result = returnBetterTeamsFromSetQuotient($team1,  $team2);
+		if ($result > 0){
+			return $result;
+		}
+		// 4. gewonnene Ballquotien
+		$result = returnBetterTeamsFromBallQuotient($team1,  $team2);
+		if ($result > 0){
+			return $result;
+		}
+
+
+	}
+
+	/**
+	 *
+	 * @param Groupteams $team1
+	 * @param Groupteams $team2
+	 * @return integer
+	 */
+	private function returnBetterTeamsPoints(Groupteams $team1, Groupteams $team2){
+		if ($team1->getPoints() > $team2->getPoints() ) return 1;
+		if ($team2->getPoints() > $team1->getPoints() ) return 2;
+		return 0;
+	}
+
+	/**
+	 *
+	 * @param Groupteams $team1
+	 * @param Groupteams $team2
+	 * @return integer
+	 */
+	private function returnBetterTeamsFromWonmatches(Groupteams $team1, Groupteams $team2){
+		if ($team1->getWonmatches() > $team2->getWonmatches() ) return 1;
+		if ($team2->getWonmatches() > $team1->getWonmatches() ) return 2;
+		return 0;
+	}
+
+	/**
+	 *
+	 * @param Groupteams $team1
+	 * @param Groupteams $team2
+	 * @return integer
+	 */
+	private function returnBetterTeamsFromSetQuotient(Groupteams $team1, Groupteams $team2){
+		if ($team1->getSetQuotient() == 'max' && getSetQuotient() == 'max' ) return 1;
+		if ($team2->getWonsets() > $team1->getWonsets() ) return 2;
+		return 0;
+	}
+
+
 }
